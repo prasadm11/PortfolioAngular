@@ -1,10 +1,13 @@
+.parent{
+background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
+}
+
 .header-gradient {
-  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
+  
 }
 
 .hero-section {
   min-height: 100vh;
-  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
   padding: 4rem 1rem;
   position: relative;
   overflow: hidden;
@@ -33,7 +36,7 @@
 
 
 .custom-header {
-  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
+  background: transparent;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding-top: 1rem;

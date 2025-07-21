@@ -1,17 +1,15 @@
-.parent{
-background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
-}
-
-.header-gradient {
-  
+.parent {
+  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
 }
 
 .hero-section {
+  position: relative;
   min-height: 100vh;
   padding: 4rem 1rem;
   position: relative;
   overflow: hidden;
   padding-top: 7rem;
+  background-image: url("/assets/stars.svg");
 }
 
 .text-gradient {
@@ -21,11 +19,11 @@ background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
 }
 
 .hero-section::before {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/stars.svg'); /* Optional: add a star/particles SVG or use a CSS generator */
+  /* Optional: add a star/particles SVG or use a CSS generator */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -34,7 +32,6 @@ background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
   z-index: 0;
 }
 
-
 .custom-header {
   background: transparent;
   padding-top: 1rem;
@@ -42,7 +39,7 @@ background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
 }
 
 .custom-nav {
-    backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   background-color: rgba(255, 255, 255, 0.08);
   border: 0.5px solid rgba(83, 80, 80, 1);
@@ -52,7 +49,7 @@ background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
 
 .nav-link {
   color: rgba(255, 255, 255, 0.8) !important;
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
@@ -71,4 +68,3 @@ background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
   background-color: #ffffff;
   color: #0f172a !important;
 }
-

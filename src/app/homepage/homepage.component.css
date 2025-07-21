@@ -1,4 +1,6 @@
-
+.header-gradient {
+  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
+}
 
 .hero-section {
   min-height: 100vh;

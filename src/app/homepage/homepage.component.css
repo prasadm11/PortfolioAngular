@@ -37,14 +37,16 @@ background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
 
 .custom-header {
   background: transparent;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
+  /* -webkit-backdrop-filter: blur(10px); */
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
 .custom-nav {
   background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
   border: 0.5px solid rgba(83, 80, 80, 1);
   border-radius: 100px;
   box-shadow: rgba(0, 0, 0, 0.1) -1px 2px 12px;

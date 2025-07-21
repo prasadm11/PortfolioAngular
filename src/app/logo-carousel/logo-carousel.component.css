@@ -1,0 +1,29 @@
+.logo-carousel {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 60px;
+  animation: scrollLogos 30s linear infinite;
+  align-items: center;
+}
+
+.carousel-track img {
+  height: 50px;
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+/* Scroll animation */
+@keyframes scrollLogos {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

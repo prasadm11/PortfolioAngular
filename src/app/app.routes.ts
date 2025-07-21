@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
+import { LogoCarouselComponent } from './logo-carousel/logo-carousel.component';
 
 export const routes: Routes = [
   {
@@ -10,4 +11,5 @@ export const routes: Routes = [
     path: 'homepage',
     component: HomepageComponent,
   },
+  
 ];

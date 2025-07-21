@@ -2,14 +2,21 @@
   background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
 }
 
+
 .hero-section {
   position: relative;
-  min-height: 100vh;
+  min-height: 80vh;
   padding: 4rem 1rem;
   position: relative;
   overflow: hidden;
   padding-top: 7rem;
   background-image: url("/assets/stars.svg");
+  background-size: cover;        /* Ensure background covers the section */
+  background-repeat: no-repeat;  /* Prevent tiling */
+  background-position: center; 
+}
+.Title{
+    font-size: 42px;
 }
 
 .text-gradient {
@@ -32,10 +39,14 @@
   z-index: 0;
 }
 
+.rounded-circle{
+    border-radius: 30% !important;
+}
+
 .custom-header {
   background: transparent;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  /* padding-top: 1rem;
+  padding-bottom: 1rem; */
 }
 
 .custom-nav {
@@ -67,4 +78,95 @@
 .nav-link.active {
   background-color: #ffffff;
   color: #0f172a !important;
+}
+.availability-badge {
+  background-color: #001402cc;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 12px;
+  padding: 6px 16px;
+  position: relative;
+  box-shadow: inset 0 -6px 0 -5px #0e250f, 0 2px 7px rgba(8, 24, 34, 0.8);
+  backdrop-filter: blur(4px);
+  border: 0.5px solid #1e0706;
+}
+
+
+.availability-badge {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Manrope', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.glow-wrapper {
+  position: relative;
+  width: 6px;
+  height: 6px;
+  margin-right: 0.5rem;
+}
+
+.glow-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background-color: #44c250;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  animation: coreFlicker 2s infinite ease-in-out;
+}
+
+.glow-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: #44c250;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(8px);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: ringPulse 2s infinite ease-in-out;
+}
+
+@keyframes coreFlicker {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 4px #44c250;
+  }
+  25% {
+    opacity: 0.4;
+    box-shadow: 0 0 2px #44c250;
+  }
+  50% {
+    opacity: 0.9;
+    box-shadow: 0 0 12px #44c250;
+  }
+  75% {
+    opacity: 0.6;
+    box-shadow: 0 0 6px #44c250;
+  }
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    opacity: 0.15;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.3);
+  }
 }

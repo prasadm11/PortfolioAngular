@@ -31,19 +31,39 @@
       height="80"
     />
 
-    <!-- Availability Badge -->
-    <div
-      class="badge bg-success text-white mb-4 px-3 py-2 rounded-pill shadow-sm"
-    >
-      <i class="bi bi-circle-fill me-2"></i> Available for opportunities
+    <!-- Glowing Dot (inside your badge or alone) -->
+    <div class="availability-badge">
+      <div class="glow-wrapper">
+        <span class="glow-core"></span>
+        <span class="glow-ring"></span>
+      </div>
+      Available for opportunities
     </div>
 
     <!-- Title -->
-    <h1 class="display-4 fw-bold">
+    <h1 class="display-4 fw-bold Title">
       Welcome to<br /><span class="text-gradient">my digital humble abode</span>
     </h1>
-    <p class="mt-3 mb-4 text-light lead fw-normal">
-      I'm an independent developer.<br />
+    <p
+      style="
+        --font-selector: R0Y7TWFucm9wZS02MDA;
+        --framer-font-family: 'Manrope', sans-serif;
+        --framer-font-size: 14px;
+        --framer-font-weight: 600;
+        --framer-line-height: 24px;
+        --framer-text-alignment: center;
+        --framer-text-color: rgba(255, 255, 255, 0.4);
+        font-family: 'Manrope', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 24px;
+        color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+      "
+    >
+      I’m an independent developer.<br />
       My interest lies in full stack development, UI/UX, and clean architecture.
     </p>
 
@@ -52,11 +72,16 @@
       <a class="btn btn-outline-light btn-lg rounded-pill px-4" href="#">
         🤝 Let’s talk
       </a>
-      <a class="btn btn-dark btn-lg rounded-pill px-4" href="#">
-        Get Template <i class="bi bi-box-arrow-up-right ms-1"></i>
+      <a
+        class="btn btn-dark btn-lg rounded-pill px-4"
+        href="/assets/pdf's/Prasad_mahajan.pdf"
+        download="Prasad_mahajan.pdf"
+      >
+        Download CV <i class="bi bi-box-arrow-up-right ms-1"></i>
       </a>
     </div>
   </section>
+  <app-logo-carousel></app-logo-carousel>
 
   <!-- Footer -->
   <footer class="bg-black text-white text-center py-4">

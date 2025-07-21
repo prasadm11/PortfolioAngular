@@ -1,0 +1,30 @@
+
+
+.hero-section {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
+  padding: 4rem 1rem;
+  position: relative;
+  overflow: hidden;
+  padding-top: 7rem;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #60f5a5, #7de0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url('/assets/stars.svg'); /* Optional: add a star/particles SVG or use a CSS generator */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}

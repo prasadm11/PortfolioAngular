@@ -5,7 +5,12 @@
   color: white;
 }
 
-
+.card-wrapper {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+       /* Vertically center if you want */
+  position: relative;
+}
 
 
 .section-title {
@@ -21,6 +26,7 @@
 }
 
 .case-study-card {
+  width: 800px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -37,6 +43,7 @@
   flex: 1;
   min-width: 280px;
 }
+
 
 .project-meta {
   color: #9fcfbe;

@@ -10,6 +10,7 @@
   flex-direction: column;
    align-items: center; /* Horizontally center */
   position: relative;
+  
 }
 .card-container {
   min-height: 300vh;
@@ -23,6 +24,9 @@
   z-index: 1;
   margin-bottom: 0px;
   transition: transform 0.3s;
+  border: 1px solid #1b263b;
+    
+
 }
 
 
@@ -45,12 +49,32 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background-color: #2f3e46;
+  position: sticky;
+  background: linear-gradient(to bottom, #0d1b2a, #1b263b);
   border-radius: 24px;
   overflow: hidden;
   padding: 40px;
   gap: 40px;
   text-align: left;
+  color: white;
+}
+
+/* Background image overlay with blend and opacity */
+.case-study-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png') repeat;
+  opacity: 0.4; /* adjust opacity here */
+  mix-blend-mode: multiply; /* try multiply, overlay, soft-light */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Content stays above the background */
+.case-study-card > * {
+  position: relative;
+  z-index: 1;
 }
 
 .card-text {

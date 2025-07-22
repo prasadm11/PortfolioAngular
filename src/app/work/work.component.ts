@@ -32,5 +32,19 @@ export class WorkComponent {
   }
 ];
 
+getGradient(index: number): string {
+  const baseDarkness = 25;
+  const darknessIncrement = 10;
+  const darkness = baseDarkness + (index+10) * darknessIncrement;
+  const darkColor = `rgb(${darkness}, ${darkness + 20}, ${darkness + 40})`;
+  const darkerColor = `rgb(${darkness - 10}, ${darkness}, ${darkness + 20})`;
+
+  return `linear-gradient(to right, ${darkColor}, ${darkerColor})`;
+}
+
+getOverlay(index: number): string {
+  const darkness = 0.5 + index * 5; // increases with index
+  return `linear-gradient(to right, rgba(13,27,42,${darkness}), rgba(27,38,59,${darkness}))`;
+}
 
 }

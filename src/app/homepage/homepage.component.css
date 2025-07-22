@@ -45,15 +45,8 @@
 
 .custom-header {
   background: transparent;
-<<<<<<< HEAD
-  /* backdrop-filter: blur(10px); */
-  /* -webkit-backdrop-filter: blur(10px); */
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-=======
   /* padding-top: 1rem;
   padding-bottom: 1rem; */
->>>>>>> 816dc74aa4b08c4204a827b9a5155e8d7c1cd42e
 }
 
 .custom-nav {

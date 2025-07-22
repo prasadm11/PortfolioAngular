@@ -2,13 +2,31 @@
   <div class="card-wrapper">
     <div
       class="card"
-      *ngFor="let card of cards; let i = index"
+      *ngFor="let work of works; let i = index"
       [ngStyle]="{
-        'top': (i === cards.length - 1 ? '0px' : (100 + i * 50) + 'px')
+        'top': (i === works.length - 1 ? '0px' : (100 + i * 50) + 'px')
       }"
     >
-      <h2>Card {{ i + 1 }}</h2>
-      <p>This is content for card {{ i + 1 }}.</p>
+      <p class="subtitle"> 
+        <span class="gradient-text">CURATED WORK</span>
+      </p>
+
+      <h2 class="section-title">Featured Work</h2>
+      <p class="description">Compilation of work that evoke my sense of pride</p>
+
+      <div class="case-study-card">
+        <div class="card-text">
+          <p class="project-meta">{{ work.meta }}</p>
+          <h3 class="project-title">{{ work.title }}</h3>
+          <ul class="project-highlights">
+            <li *ngFor="let point of work.highlights">{{ point }}</li>
+          </ul>
+          <a [href]="work.link" class="btn btn-light">View Case Study →</a>
+        </div>
+        <div class="card-image">
+          <img [src]="work.image" [alt]="work.title" />
+        </div>
+      </div>
     </div>
   </div>
 </div>

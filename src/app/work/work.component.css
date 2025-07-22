@@ -17,17 +17,18 @@
   position: relative;
   padding: 50px 0;
 }
-/* Stacked sticky card */
 .stacked-card {
   position: sticky;
   top: 0;
   z-index: 1;
   margin-bottom: 0px;
-  transition: transform 0.3s;
-  border: 1px solid #1b263b;
-    
-
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: scale(0.97);
 }
+
+
+
 
 
 .section-title {
@@ -43,6 +44,7 @@
 }
 
 .case-study-card {
+  animation: floatCard 8s ease-in-out infinite;
   width: 1000px;
   min-height: 500px;
   display: flex;
@@ -51,12 +53,22 @@
   justify-content: center;
   position: sticky;
   background: linear-gradient(to bottom, #0d1b2a, #1b263b);
+  border: 1px solid rgba(163, 255, 203, 0.2);
+  box-shadow: 0 0 20px rgba(163, 255, 203, 0.2);
   border-radius: 24px;
   overflow: hidden;
   padding: 40px;
   gap: 40px;
   text-align: left;
   color: white;
+}
+@keyframes floatCard {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 /* Background image overlay with blend and opacity */
@@ -70,6 +82,29 @@
   z-index: 0;
   pointer-events: none;
 }
+
+/* .case-study-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #a3ffcb, #c6fca6, #a7fcee, #a3ffcb);
+  animation: rotateGradient 6s linear infinite;
+  z-index: 0;
+  opacity: 0.2;
+  border-radius: 50%;
+}
+
+@keyframes rotateGradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
 
 /* Content stays above the background */
 .case-study-card > * {
@@ -161,12 +196,24 @@
   position: absolute;
   width: 600px;
   height: 600px;
-  background-color: rgb(201, 219, 173);
+  background-color: rgb(110, 143, 58);
   border-radius: 50%;
   filter: blur(468px);
-  opacity: 1;
+  opacity: 0.8;
   z-index: 0;
   pointer-events: none;
-  top: -100px;
+  top: -150px;
   left: -300px;
+  animation: pulseGlow 8s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }

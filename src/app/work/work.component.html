@@ -35,26 +35,27 @@
     <h2 class="section-title">Featured Work</h2>
     <p class="description">Compilation of work that evoke my sense of pride</p>
 
-    <div class="card-wrapper">
-      <!-- Framer-style background -->
-      <div class="background-pattern"></div>
-
-      <!-- Actual Card -->
-      <div class="case-study-card">
-        <div class="card-text">
-          <p class="project-meta">AIRBNB · 2023</p>
-          <h3 class="project-title">
-            Curating AR experiences while travelling
-          </h3>
-          <ul class="project-highlights">
-            <li>Onboarding increased to 12%</li>
-            <li>New user signups increased by 32%</li>
-            <li>Engagement increased by 20%</li>
-          </ul>
-          <a href="#" class="btn btn-light">View Case Study →</a>
-        </div>
-        <div class="card-image">
-          <img src="/assets/ar-preview.png" alt="AR Experience Mockup" />
+    <!-- Stacked sticky cards -->
+    <div class="card-container">
+      <div class="card-wrapper">
+        <div
+          class="case-study-card stacked-card"
+          *ngFor="let card of cards; let i = index"
+          [ngStyle]="{ top: 100 + i * 60 + 'px' }"
+        >
+          <div class="card-text">
+            <p class="project-meta">{{ card.meta }}</p>
+            <h3 class="project-title">{{ card.title }}</h3>
+            <ul class="project-highlights">
+              <li *ngFor="let point of card.points">{{ point }}</li>
+            </ul>
+            <a href="{{ card.link }}" class="btn btn-light"
+              >View Case Study →</a
+            >
+          </div>
+          <div class="card-image">
+            <img [src]="card.image" [alt]="card.title" />
+          </div>
         </div>
       </div>
     </div>

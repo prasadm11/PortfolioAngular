@@ -7,9 +7,22 @@
 
 .card-wrapper {
   display: flex;
-  justify-content: center; /* Horizontally center */
-       /* Vertically center if you want */
+  flex-direction: column;
+   align-items: center; /* Horizontally center */
   position: relative;
+}
+.card-container {
+  min-height: 300vh;
+  position: relative;
+  padding: 50px 0;
+}
+/* Stacked sticky card */
+.stacked-card {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin-bottom: 0px;
+  transition: transform 0.3s;
 }
 
 
@@ -26,7 +39,8 @@
 }
 
 .case-study-card {
-  width: 800px;
+  width: 1000px;
+  min-height: 500px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -101,4 +115,17 @@
   width: 100%;
   border-radius: 16px;
   object-fit: cover;
+}
+
+
+/* Gradient subtitle text */
+.gradient-subtitle {
+  font-size: 0.85rem;
+  letter-spacing: 0.5em;
+  margin-bottom: 10px;
+  background-image: linear-gradient(99.6983deg, rgb(198, 252, 166) 0%, rgba(167, 252, 238, 0.74) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }

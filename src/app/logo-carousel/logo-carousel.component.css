@@ -3,6 +3,8 @@
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  transform: scale(0.8); /* 👈 scale the whole component */
+  transform-origin: center; /* 👈 optional: makes scaling center-aligned */
 }
 
 .carousel-track {
@@ -13,12 +15,11 @@
 }
 
 .carousel-track img {
-  height: 50px;
+  height: 30px;
   flex-shrink: 0;
   object-fit: contain;
 }
 
-/* Scroll animation */
 @keyframes scrollLogos {
   from {
     transform: translateX(0%);

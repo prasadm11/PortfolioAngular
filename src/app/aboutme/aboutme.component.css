@@ -1,0 +1,15 @@
+.about-me-section {
+  background-color: #07141d;
+}
+
+.rotate-wrapper img {
+  transform: rotate(6deg);
+  border-width: 4px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.rotate-wrapper .name-caption {
+  bottom: -15px;
+  font-weight: 600;
+  font-size: 14px;
+}

@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
+import { AboutmeComponent } from '../aboutme/aboutme.component';
 @Component({
   selector: 'app-work',
-  imports: [CommonModule],
+  imports: [CommonModule,AboutmeComponent],
   templateUrl: './work.component.html',
   styleUrl: './work.component.css'
 })

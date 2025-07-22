@@ -11,9 +11,10 @@
    align-items: center; /* Horizontally center */
   position: relative;
   
+  
 }
 .card-container {
-  min-height: 300vh;
+  min-height: auto;
   position: relative;
   padding: 50px 0;
 }

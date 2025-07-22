@@ -26,7 +26,8 @@
 }
 
 .case-study-card {
-  width: 800px;
+  width: 1000px;
+  min-height: 500px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

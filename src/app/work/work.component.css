@@ -75,7 +75,9 @@
 .case-study-card > * {
   position: relative;
   z-index: 1;
+  
 }
+
 
 .card-text {
   flex: 1;
@@ -152,4 +154,19 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
+}
+
+
+.blurred-gradient {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background-color: rgb(201, 219, 173);
+  border-radius: 50%;
+  filter: blur(468px);
+  opacity: 1;
+  z-index: 0;
+  pointer-events: none;
+  top: -100px;
+  left: -300px;
 }

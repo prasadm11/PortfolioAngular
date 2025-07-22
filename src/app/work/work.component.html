@@ -38,14 +38,12 @@
     <!-- Stacked sticky cards -->
     <div class="card-container">
       <div class="card-wrapper">
+        
+        <div class="blurred-gradient"></div>
         <div
-          class="case-study-card stacked-card"
-          *ngFor="let card of cards; let i = index"
-          [ngStyle]="{
-            top: 100 + i * 60 + 'px',
-            background:
-              'linear-gradient(to right,#04360f, #1b263b), ' + getGradient(i)
-          }"
+        class="case-study-card stacked-card"
+        *ngFor="let card of cards; let i = index"
+        [ngStyle]="{ top: 100 + i * 60 + 'px' }"
         >
           <div class="card-text">
             <p class="project-meta">{{ card.meta }}</p>

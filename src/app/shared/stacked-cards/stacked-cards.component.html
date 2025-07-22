@@ -1,0 +1,14 @@
+<div class="card-container">
+  <div class="card-wrapper">
+    <div
+      class="card"
+      *ngFor="let card of cards; let i = index"
+      [ngStyle]="{
+        'top': (i === cards.length - 1 ? '0px' : (100 + i * 50) + 'px')
+      }"
+    >
+      <h2>Card {{ i + 1 }}</h2>
+      <p>This is content for card {{ i + 1 }}.</p>
+    </div>
+  </div>
+</div>

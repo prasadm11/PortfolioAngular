@@ -1,0 +1,28 @@
+.card-container {
+  min-height: 300vh;
+  background: #0f172a;
+  padding: 50px;
+}
+
+.card-wrapper {
+  position: relative;
+}
+
+.card {
+  position: sticky;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  font-size: 24px;
+  padding: 50px;
+  margin-bottom: 0px;
+  height: 500px;
+  transition: transform 0.3s;
+  z-index: 1;
+}
+
+
+/* .card:hover {
+  transform: scale(1.02);
+} */

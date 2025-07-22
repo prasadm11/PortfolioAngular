@@ -1,5 +1,7 @@
 .logo-carousel {
   width: 100%;
+  margin-top: 50px;
+  margin-bottom: 100px;
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -15,10 +17,16 @@
 }
 
 .carousel-track img {
-  height: 30px;
+  height: 40px;
   flex-shrink: 0;
+  filter:grayscale();
   object-fit: contain;
 }
+.carousel-track img:hover{
+  filter: none;
+  transform: scale(1.2);
+}
+
 
 @keyframes scrollLogos {
   from {

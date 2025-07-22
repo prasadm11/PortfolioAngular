@@ -4,10 +4,12 @@ import { routes } from '../app.routes';
 import { LogoCarouselComponent } from "../logo-carousel/logo-carousel.component";
 import { FooterComponent } from "../shared/footer/footer.component";
 import { HeaderComponent } from "../shared/header/header.component";
+import { StackedCardsComponent } from "../shared/stacked-cards/stacked-cards.component";
+import { WorkComponent } from "../work/work.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [LogoCarouselComponent, FooterComponent, HeaderComponent],
+  imports: [LogoCarouselComponent, FooterComponent, HeaderComponent, StackedCardsComponent, WorkComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })

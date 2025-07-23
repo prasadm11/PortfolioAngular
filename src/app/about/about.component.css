@@ -29,24 +29,28 @@
 
 
 .about-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(90deg, #d4ffec, #9affd7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-family: 'Pockota Medium', sans-serif;
+  font-size: 50px;
+  letter-spacing: -0.64px;
+  line-height: 50px;
+  color: #fff;
+  margin-bottom: 1rem;
 }
+
 
 .about-description {
   max-width: 600px;
   font-size: 1rem;
   line-height: 1.6;
   color: #ddd;
-
-  .highlight {
-    color: #a0f9d3;
-    font-weight: 600;
-  }
+  text-align: center; /* To match Framer site */
 }
+
+.highlight {
+  color:rgba(198, 252, 166, 1);
+  font-weight: 600;
+}
+
 
 .about-img-card {
   border-radius: 12px;
@@ -60,4 +64,12 @@
   &:hover {
     transform: rotate(0deg) scale(1.03);
   }
+}
+
+
+@font-face {
+  font-family: 'Pockota Medium';
+  src: url('/assets/fonts/Pockota-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }

@@ -1,10 +1,11 @@
 import { Component ,HostListener} from '@angular/core';
 
 import { SideCardsComponent } from "../shared/side-cards/side-cards.component";
+import { ExperienceComponent } from "../experience/experience.component";
 
 @Component({
   selector: 'app-about',
-  imports: [SideCardsComponent],
+  imports: [SideCardsComponent, ExperienceComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

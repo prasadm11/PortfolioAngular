@@ -1,7 +1,15 @@
 <div class="side-cards-container">
-  <div class="card" *ngFor="let card of cards; let i = index" [style.transform]="getCardTransform(i)">
+  <div
+    class="card"
+    *ngFor="let card of cards; let i = index"
+    [style.transform]="getCardTransform(i)"
+    (mousemove)="handleMouseMove($event, i)"
+    (mouseleave)="resetTilt(i)"
+    [style.zIndex]="i + 10"
+  >
     <div class="card-content">
-      {{ card }}
+      <img *ngIf="card.image" [src]="card.image" alt="card image" />
+      <span *ngIf="card.label">{{ card.label }}</span>
     </div>
   </div>
 </div>

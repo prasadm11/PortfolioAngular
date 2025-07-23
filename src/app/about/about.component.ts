@@ -1,10 +1,10 @@
 import { Component ,HostListener} from '@angular/core';
-import { FooterComponent } from "../shared/footer/footer.component";
-import { HeaderComponent } from "../shared/header/header.component";
+
+import { SideCardsComponent } from "../shared/side-cards/side-cards.component";
 
 @Component({
   selector: 'app-about',
-  imports: [FooterComponent, HeaderComponent],
+  imports: [SideCardsComponent],
   templateUrl: './about.component.html',
   styleUrl: './about.component.css'
 })

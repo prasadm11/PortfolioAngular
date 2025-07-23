@@ -1,0 +1,28 @@
+.side-cards-container {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  margin: 40px auto;
+  perspective: 800px;
+}
+
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150px;
+  height: 200px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  transform-origin: bottom center;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content {
+  font-weight: bold;
+  font-size: 18px;
+}

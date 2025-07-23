@@ -1,0 +1,7 @@
+<div class="side-cards-container">
+  <div class="card" *ngFor="let card of cards; let i = index" [style.transform]="getCardTransform(i)">
+    <div class="card-content">
+      {{ card }}
+    </div>
+  </div>
+</div>

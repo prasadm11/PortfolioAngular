@@ -1,5 +1,6 @@
 .logo-carousel {
   width: 100%;
+ 
   margin-top: 50px;
   margin-bottom: 100px;
   overflow: hidden;
@@ -11,6 +12,7 @@
 
 .carousel-track {
   display: flex;
+   height :60px;
   gap: 60px;
   animation: scrollLogos 30s linear infinite;
   align-items: center;

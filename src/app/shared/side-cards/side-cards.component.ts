@@ -55,7 +55,7 @@ getCardTransform(index: number): string {
     const cards = document.querySelectorAll('.card');
     const card = cards[index] as HTMLElement;
     card.style.transform = this.getCardTransform(index);
-     this.hoveredIndex = null;
+    this.hoveredIndex = null;
   
   }
 }

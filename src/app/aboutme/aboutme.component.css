@@ -12,4 +12,72 @@
   bottom: -15px;
   font-weight: 600;
   font-size: 14px;
+  background-color: rgb(54, 54, 52); /* White background */
+  color: #000; /* fallback if gradient fails */
+}
+
+/* Gradient text styling */
+.name-caption .gradient-text {
+  background-image: linear-gradient(
+    99.7deg,
+    rgb(198, 252, 166) 0%,
+    rgba(167, 252, 238, 0.74) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-family: 'Manrope', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+
+
+
+
+.text-success.text-uppercase.mb-2 {
+  background-image: linear-gradient(
+    99.7deg,
+    rgb(198, 252, 166) 0%,
+    rgba(167, 252, 238, 0.74) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-family: 'Manrope', sans-serif;
+}
+
+
+.custom-know-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: rgb(8, 24, 34);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-decoration: none;
+  color: white;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow:
+    rgba(0, 0, 0, 0.08) 0px 2px 24px 0px,
+    rgba(0, 0, 0, 0.11) 0px -2px 4px inset;
+  transition: all 0.3s ease;
+}
+
+.custom-know-more-btn:hover {
+  box-shadow:
+    rgba(255, 255, 255, 0.2) 0px 0px 10px,
+    rgba(0, 0, 0, 0.11) 0px -2px 4px inset;
+  transform: translateY(-2px);
+}
+
+.custom-know-more-btn .arrow-icon {
+  width: 18px;
+  height: 18px;
 }

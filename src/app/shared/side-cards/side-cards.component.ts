@@ -9,21 +9,22 @@ import { Component } from '@angular/core';
 })
 export class SideCardsComponent {
   cards = [
-    { label: 'Ace of Spades', image: 'assets/cards/ace-spades.png' },
-    { label: 'King of Hearts', image: 'assets/cards/king-hearts.png' },
-    { label: 'Queen of Clubs', image: 'assets/cards/queen-clubs.png' },
-    { label: 'Jack of Diamonds', image: 'assets/cards/jack-diamonds.png' },
-    { label: '10 of Spades', image: 'assets/cards/10-spades.png' }
+    { image: 'assets/cards/ace-spades.png' },
+    { image: 'assets/cards/king-hearts.png' },
+    { image: 'assets/cards/queen-clubs.png' },
+    { image: 'assets/cards/jack-diamonds.png' },
+    { image: 'assets/cards/10-spades.png' }
   ];
 
   getCardTransform(index: number): string {
-    const angle = (index - (this.cards.length - 1) / 2) * 10;
-    const translateY = Math.abs(index - (this.cards.length - 1) / 2) * 5;
-    return `rotate(${angle}deg) translateY(-${translateY}px)`;
+    const overlap = 40; // pixels each card overlaps the previous one
+    const rotate = (index - (this.cards.length - 1) / 2) * 4; // less curve, more linear
+    const translateX = index * overlap;
+    return `translateX(${translateX}px) rotate(${rotate}deg)`;
   }
 
   handleMouseMove(event: MouseEvent, index: number): void {
-    const card = (event.currentTarget as HTMLElement);
+    const card = event.currentTarget as HTMLElement;
     const rect = card.getBoundingClientRect();
     const x = event.clientX - rect.left - rect.width / 2;
     const y = event.clientY - rect.top - rect.height / 2;

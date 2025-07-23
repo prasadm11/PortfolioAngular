@@ -1,0 +1,63 @@
+.parent {
+  background: radial-gradient(circle at 50% 30%, #0f172a, #020617);
+}
+.about-me-section {
+  background: #07141d;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  min-height: 100vh;
+}
+
+.icon-circle img {
+  filter: drop-shadow(0 0 10px #a0f9d3);
+}
+.icon-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 10px #a0f9d3);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
+}
+
+.pixel-icon {
+  background-image: url("/assets/img/roundcircle.png");
+  image-rendering: pixelated;
+  background-color: white;
+}
+
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #d4ffec, #9affd7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.about-description {
+  max-width: 600px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+
+  .highlight {
+    color: #a0f9d3;
+    font-weight: 600;
+  }
+}
+
+.about-img-card {
+  border-radius: 12px;
+  width: 180px;
+  height: 240px;
+  object-fit: cover;
+  transform: rotate(3deg);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(0deg) scale(1.03);
+  }
+}

@@ -1,13 +1,14 @@
 .side-cards-container {
   position: relative;
   width: 100%;
-  height: 260px;
+  height: 220px;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   padding: 40px;
+  margin-bottom: 100px;
   perspective: 1000px;
-  overflow-x: auto;
+  
 }
 
 .card {
@@ -27,6 +28,10 @@
 }
 
 .card:hover {
+  /* margin: 20px; */
+  margin-right: 150px;
+  margin-left: 50px;
+  
   z-index: 999;
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.35);
 }

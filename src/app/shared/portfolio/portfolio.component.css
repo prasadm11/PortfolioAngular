@@ -153,20 +153,84 @@ p {
 }
 
 /* Designer avatars */
-.avatar-row {
-  display: flex;
-  margin-left: 20px;
+
+.admired-designers{
+  
+  background: linear-gradient(99.6983deg, rgb(198, 252, 166) 0%, rgba(167, 252, 238, 0.74) 100%)
 }
 
-.avatar-row img {
-  width: 40px;
-  border: 1px solid white; 
+.admired-designers h4{
+  color: black;
+}
+
+.avatar-row {
+  display: flex;
+  align-items: center;
+  /* margin-left: 20px; */
+}
+
+.avatar {
+  position: relative;
   margin-left: -10px;
+  transition: margin 0.3s ease;
+}
+
+.avatar-row:hover .avatar {
+  margin-left: 12px;
+}
+
+.avatar img {
+  width: 40px;
   height: 40px;
+  border: 2px solid white;
   border-radius: 50%;
-  /* object-fit: cover; */
+  object-fit: cover;
+  display: block;
   z-index: 1;
 }
+
+/* Custom tooltip */
+.avatar::after {
+  content: attr(data-name);
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1f2937; /* Tailwind's gray-800 */
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Small arrow under tooltip */
+.avatar::before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #1f2937 transparent transparent transparent;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 10;
+}
+
+.avatar:hover::after,
+.avatar:hover::before {
+  opacity: 1;
+}
+
+
 
 /* Persona tags */
 

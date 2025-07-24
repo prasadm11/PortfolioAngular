@@ -90,11 +90,31 @@
 
       <!-- Persona -->
       <div class="card persona">
-        <h4>My Persona</h4>
+        <div class="persona-container">
+          <h4>My Persona</h4>
+          <button (click)="resetTags()" class="refresh-btn">
+            <img
+              src="assets\img\refresh-svgrepo-com.svg"
+              alt="Refresh"
+            />
+          </button>
+        </div>
+
         <div class="persona-tags">
-          <span class="tag">Social-animal 🧑‍🤝‍🧑</span>
-          <span class="tag">Night-Owl 🦉</span>
-          <span class="tag">Traveller ✈️</span>
+          <span
+            class="tag"
+            *ngFor="let tag of tags"
+            [ngStyle]="{
+              top: tag.top + 'px',
+              left: tag.left + 'px',
+              transform: tag.dragging ? 'scale(1.1)' : 'scale(1)'
+            }"
+            (mousedown)="startDrag($event, tag)"
+            (document:mouseup)="endDrag(tag)"
+            (document:mousemove)="onDrag($event, tag)"
+          >
+            {{ tag.label }}
+          </span>
         </div>
       </div>
     </div>

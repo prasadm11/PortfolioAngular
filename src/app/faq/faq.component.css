@@ -99,3 +99,32 @@
   font-weight: 600;
   font-size: 1rem;
 }
+.faq-item {
+  background-color: #081822; 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+
+  h5 {
+    font-size: 1.125rem;
+    line-height: 1.5;
+  }
+
+  .faq-answer {
+    line-height: 1.6;
+  }
+
+  &.open {
+    border-color: rgba(255, 255, 255, 0.2);
+    background-color: #0b2331;
+  }
+
+  .faq-icon {
+    font-size: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  &.open .faq-icon {
+    transform: rotate(180deg);
+  }
+}

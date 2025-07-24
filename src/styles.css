@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@keyframes pulseAnim {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(3.5); /* ← increase this to make pulse bigger */
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

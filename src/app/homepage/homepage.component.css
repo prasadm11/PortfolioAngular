@@ -9,7 +9,7 @@
   padding: 4rem 1rem;
   position: relative;
   overflow: hidden;
-  padding-top: 7rem;
+  /* padding-top: 7rem; */
   background-image: url("/assets/stars.svg");
   background-size: cover;        /* Ensure background covers the section */
   background-repeat: no-repeat;  /* Prevent tiling */
@@ -41,6 +41,7 @@
 
 .rounded-circle{
     border-radius: 30% !important;
+    bottom: -60px;
 }
 
 .custom-header {

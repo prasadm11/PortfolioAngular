@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FaqComponent } from '../faq/faq.component';
 import { LogoCarouselComponent } from "../logo-carousel/logo-carousel.component";
 import { FooterComponent } from "../shared/footer/footer.component";
@@ -10,7 +10,8 @@ import { AboutmeComponent } from "../aboutme/aboutme.component";
   selector: 'app-homepage',
   imports: [LogoCarouselComponent, FooterComponent, WorkComponent, AboutmeComponent,FaqComponent],
   templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.css'
+  styleUrl: './homepage.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomepageComponent {
   

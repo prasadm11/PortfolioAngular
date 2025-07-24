@@ -71,7 +71,7 @@
       <div class="col-md-6">
         <div
           *ngFor="let faq of faqs"
-          class="faq-item p-4 mb-3 rounded-4 border faq-card-custom"
+          class="faq-item p-3 mb-3 rounded-4 border faq-card-custom"
           [class.open]="faq.isOpen"
           (click)="toggleFAQ(faq)"
         >
@@ -79,10 +79,43 @@
             class="faq-header d-flex justify-content-between align-items-center"
           >
             <h5 class="m-0 fw-semibold text-white">{{ faq.question }}</h5>
-            <span class="faq-icon text-white">
-              {{ faq.isOpen ? "▲" : "▼" }}
+
+            <!-- Wrapper to center the icon -->
+            <span
+              class="faq-icon d-flex align-items-center justify-content-center"
+              style="width: 24px; height: 24px"
+            >
+              <!-- Down Arrow (when closed) -->
+              <svg
+                *ngIf="!faq.isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 256"
+                style="width: 100%; height: 100%; fill: white"
+              >
+                <path
+                  d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                />
+              </svg>
+
+              <!-- Up Arrow (when open) -->
+              <svg
+                *ngIf="faq.isOpen"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 256 256"
+                style="
+                  width: 100%;
+                  height: 100%;
+                  fill: white;
+                  transform: rotate(180 128);
+                "
+              >
+                <path
+                  d="M213.66,101.66l-80,80a8,8,0,0,1-11.32,0l-80-80A8,8,0,0,1,53.66,90.34L128,164.69l74.34-74.35a8,8,0,0,1,11.32,11.32Z"
+                />
+              </svg>
             </span>
           </div>
+
           <div *ngIf="faq.isOpen" class="faq-answer mt-3 text-white-50 small">
             {{ faq.answer }}
           </div>

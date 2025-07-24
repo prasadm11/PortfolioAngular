@@ -74,6 +74,13 @@ export class PortfolioComponent implements OnInit {
         .bindPopup('I live Here')
         .openPopup();
     }
+
+    this.tags.forEach(tag => {
+      const top = Math.random() * 200;
+      const left = Math.random() * 200;
+      tag.top = tag.startTop = top;
+      tag.left = tag.startLeft = left;
+    });
   }
 
   logos: string[] = [
@@ -81,4 +88,64 @@ export class PortfolioComponent implements OnInit {
     'https://www.svgrepo.com/show/331642/webflow.svg',
     'https://www.svgrepo.com/show/306484/notion.svg',
   ];
+
+  tags = [
+  { label: 'Social-animal 🧑‍🤝‍🧑', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Night-Owl 🦉', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Traveller ✈️', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Tech Geek 🤖', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Foodie 🍔', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Fitness Freak 💪', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Bookworm 📚', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Pet Lover 🐶', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Artist 🎨', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+  { label: 'Gamer 🎮', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false }
+];
+
+
+  private dragOffset = { x: 0, y: 0 };
+  private activeTag: any = null;
+
+  // ngOnInit(): void {
+  //   // Randomize initial position
+  //   this.tags.forEach(tag => {
+  //     const top = Math.random() * 200;
+  //     const left = Math.random() * 200;
+  //     tag.top = tag.startTop = top;
+  //     tag.left = tag.startLeft = left;
+  //   });
+  // }
+
+  startDrag(event: MouseEvent, tag: any) {
+    event.preventDefault();
+    tag.dragging = true;
+    this.activeTag = tag;
+    this.dragOffset = {
+      x: event.clientX - tag.left,
+      y: event.clientY - tag.top
+    };
+  }
+
+  onDrag(event: MouseEvent, tag: any) {
+    if (!tag.dragging) return;
+    tag.top = event.clientY - this.dragOffset.y;
+    tag.left = event.clientX - this.dragOffset.x;
+  }
+
+  endDrag(tag: any) {
+    if (!tag.dragging) return;
+    tag.dragging = false;
+    // Reset to original position
+    // tag.top = tag.startTop;
+    // tag.left = tag.startLeft;
+    // this.activeTag = null;
+  }
+
+  resetTags() {
+  this.tags.forEach(tag => {
+    tag.top = tag.startTop;
+    tag.left = tag.startLeft;
+  });
+}
+
 }

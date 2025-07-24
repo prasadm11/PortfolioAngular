@@ -71,7 +71,7 @@ export class PortfolioComponent implements OnInit {
       leaflet
         .marker([19.141467, 73.008403], { icon: pulsingIcon })
         .addTo(map)
-        .bindPopup('I live Here')
+        // .bindPopup('I live Here')
         .openPopup();
     }
   }

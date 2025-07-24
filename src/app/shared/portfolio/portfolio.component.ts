@@ -16,6 +16,8 @@ export class PortfolioComponent implements OnInit {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
+  
+
   async ngOnInit(): Promise<void> {
     if (this.isBrowser) {
       const leaflet = await import('leaflet');
@@ -70,9 +72,7 @@ export class PortfolioComponent implements OnInit {
 
       leaflet
         .marker([19.141467, 73.008403], { icon: pulsingIcon })
-        .addTo(map)
-        .bindPopup('I live Here')
-        .openPopup();
+        .addTo(map);
     }
 
     this.tags.forEach(tag => {
@@ -96,10 +96,10 @@ export class PortfolioComponent implements OnInit {
   { label: 'Tech Geek 🤖', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
   { label: 'Foodie 🍔', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
   { label: 'Fitness Freak 💪', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
-  { label: 'Bookworm 📚', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
-  { label: 'Pet Lover 🐶', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
-  { label: 'Artist 🎨', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
-  { label: 'Gamer 🎮', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false }
+//   { label: 'Bookworm 📚', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+//   { label: 'Pet Lover 🐶', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+//   { label: 'Artist 🎨', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false },
+//   { label: 'Gamer 🎮', top: 0, left: 0, startTop: 0, startLeft: 0, dragging: false }
 ];
 
 

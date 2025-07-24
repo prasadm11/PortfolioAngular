@@ -1,0 +1,72 @@
+.experience-section {
+  background: linear-gradient(to bottom, #0c1a1c, #0b0f14);
+  margin-top: 50px;
+}
+
+.experience-description {
+  max-width: 700px;
+}
+
+.collab-avatar {
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 4px rgba(0, 255, 200, 0.5);
+}
+
+.cta-box {
+  /* background: linear-gradient(to right, #c0ffd7, #a0f0e0); */
+  background: linear-gradient(99.69833281472663deg, #c6fca6 0%, rgba(167, 252, 238, .7400000095367432) 100%);
+  color: #000;
+  max-width: 900px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 25px !important;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 24px, rgba(0, 0, 0, 0.11) 0px -2px 4px inset;
+}
+.cta-button {
+  background-color: #081822;
+  color: #fff;
+  padding: 8px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 400;
+  transition: all 0.3s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 24px, rgba(0, 0, 0, 0.11) 0px -2px 4px inset;
+}
+.cta-button:hover {
+  background-color: #0d2c3a;
+  transform: translateY(-2px);
+}
+.cta-button .icon {
+  stroke: #fff;
+}
+h5.text-success {
+  background: linear-gradient(99.7deg, rgb(178, 253, 135), rgba(167, 252, 238, 0.74));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.company-name {
+  color: rgb(198, 252, 166);
+  font-weight: 600;
+}
+
+
+@font-face {
+  font-family: 'Pockota Medium';
+  src: url('/assets/fonts/Pockota-Medium.woff2') format('woff2'),
+       url('/assets/fonts/Pockota-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.cta-heading {
+  font-family: 'Pockota Medium', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  line-height: 150%;
+  color: rgb(21, 30, 40); /* Matches Framer's text color */
+  margin-bottom: 10px;
+}

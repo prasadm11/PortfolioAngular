@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { FaqComponent } from '../faq/faq.component';
 import { LogoCarouselComponent } from "../logo-carousel/logo-carousel.component";
 import { FooterComponent } from "../shared/footer/footer.component";
 import { WorkComponent } from "../work/work.component";
@@ -8,7 +8,7 @@ import { AboutmeComponent } from "../aboutme/aboutme.component";
 
 @Component({
   selector: 'app-homepage',
-  imports: [LogoCarouselComponent, FooterComponent, WorkComponent, AboutmeComponent],
+  imports: [LogoCarouselComponent, FooterComponent, WorkComponent, AboutmeComponent,FaqComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css'
 })

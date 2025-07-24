@@ -1,0 +1,101 @@
+.faq-card {
+  background-color: #071822;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 1px 2px #091d2a;
+  z-index: 2;
+}
+.container{
+  padding-top: 55px;
+}
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.overlay-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  z-index: 2;
+}
+
+.btn-contact {
+  background-color: white;
+  color: black;
+  padding: 10px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.08), 0px -2px 4px rgba(0, 0, 0, 0.11) inset;
+  transition: transform 0.2s ease;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Decorative Ellipses */
+.ellipse {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+.ellipse1 {
+  width: 120px;
+  height: 120px;
+  top: -30px;
+  left: -40px;
+}
+.ellipse2 {
+  width: 80px;
+  height: 80px;
+  bottom: -20px;
+  right: -30px;
+}
+.ellipse3 {
+  width: 60px;
+  height: 60px;
+  top: 20px;
+  right: 10px;
+}
+.ellipse4 {
+  width: 40px;
+  height: 40px;
+  bottom: 40px;
+  left: 30px;
+}
+.letstalkresp{
+    z-index: 10;
+}
+
+.black-gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.1) 0%,   /* 10% black at top */
+    rgba(0, 0, 0, 0.9) 100%  /* 70% black at bottom */
+  );
+  z-index: 1;
+  pointer-events: none; /* allows clicks to pass through */
+}
+.gradient-text {
+  background: linear-gradient(99.7deg, rgb(198, 252, 166) 0%, rgba(167, 252, 238, 0.74) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1rem;
+}

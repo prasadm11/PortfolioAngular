@@ -1,0 +1,76 @@
+<section class="experience-section text-white py-5 px-3 text-center">
+  <div class="container">
+    <h5 class="text-success text-uppercase mb-2">My Experiences</h5>
+    <h2 class="fw-bold mb-5">Where I’ve Been Employed</h2>
+
+    <!-- Experience List -->
+    <div class="d-flex experience-item mb-5" *ngFor="let job of experiences">
+      <div class="col-md-2"></div>
+      <div class="col-md-4">
+        <h5 class="fw-bold">
+          {{ job.role }},
+          <span class="company-name">{{ job.company }}</span>
+        </h5>
+
+        <p class="fst-italic">{{ job.duration }} / {{ job.location }}</p>
+      </div>
+      <div class="col-md-4">
+        <p class="experience-description mx-auto">{{ job.description }}</p>
+
+        <div *ngIf="(job.collaborators?.length || 0) > 0" class="collaborators">
+          <span class="fst-italic">~ collaborated with</span>
+          <div class="d-flex justify-content-center mt-1">
+            <img
+              *ngFor="let member of job.collaborators"
+              [src]="member"
+              class="collab-avatar mx-1"
+              width="32"
+              height="32"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-2"></div>
+
+      <hr class="my-4" />
+    </div>
+
+    <!-- CTA Box -->
+
+    <div class="cta-box mt-5 p-4 rounded d-flex align-items-centre">
+      <div class="content1">
+        <h5 class="cta-heading">Let’s Connect and Create Something Amazing!</h5>
+
+        <span class="small text-muted fw-bold">
+          Reach out to me for collaborations, inquiries, or just to say hello.
+        </span>
+      </div>
+      
+      <div class="content2">
+        <a
+          href="https://personalfolio.lemonsqueezy.com/checkout/buy/0ce0ffe4-2dda-4cb3-aed8-53e4ca49c14c"
+          target="_blank"
+          rel="noopener"
+          class="cta-button d-inline-flex align-items-center gap-2"
+        >
+          Contact Me
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            fill="none"
+            stroke="white"
+            stroke-width="1.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon"
+          >
+            <path d="M5.25 12.75L12.75 5.25" />
+            <path d="M5.25 5.25H12.75V12.75" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

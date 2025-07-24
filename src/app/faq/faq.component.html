@@ -1,0 +1,73 @@
+<section class="faq-section py-5 text-white bg-dark ">
+  <div class="container px-3">
+    <!-- <h6 class="text-success text-uppercase text-center mb-1">Some Doubts</h6> -->
+    <h6 class="text-uppercase text-center mb-1">
+      <span class="gradient-text d-block mx-auto">Some Doubts</span>
+    </h6>
+
+    <h2 class="text-center fw-bold mb-3">Frequently Asked Questions</h2>
+    <p class="text-center mb-5">Your answers await right here</p>
+
+    <div class="row">
+      <!-- Left CTA Card -->
+       <div class="col-md-1"></div>
+      <div class="col-md-4 mb-5 position-relative">
+        <!-- Decorative Circles (Fake Ellipses) -->
+        <div class="ellipse ellipse1"></div>
+        <!-- <div class="ellipse ellipse2"></div> -->
+        <!-- <div class="ellipse ellipse3"></div> -->
+        <div class="ellipse ellipse4"></div>
+
+        <div
+          class="faq-card p-4 text-white text-center position-relative rounded-4 shadow"
+        >
+          <h5 class="mb-3 fw-medium">
+            Have any more questions or want to start collaborating?
+          </h5>
+
+          <div class="image-wrapper position-relative">
+            <img
+              src="https://framerusercontent.com/images/yYdklccnAyP8hogD2YvPwbRrsU.png?scale-down-to=512"
+              class="img-fluid rounded-3"
+              alt="Collaborate"
+            />
+            <div class="black-gradient-overlay rounded-3"></div>
+            <div class="overlay-content p-3 text-white text-center">
+              <a
+                class="btn btn-contact"
+                href="https://personalfolio.lemonsqueezy.com/checkout/buy/0ce0ffe4-2dda-4cb3-aed8-53e4ca49c14c"
+                target="_blank"
+                rel="noopener"
+              >
+                👋🏻 Let's talk
+              </a>
+              <p class="small mt-2 opacity-75">
+                * Response time is typically around 12 hours
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right FAQ Accordion -->
+      <div class="col-md-6">
+        <div
+          *ngFor="let faq of faqs"
+          class="mb-3 border rounded p-3 bg-body text-dark"
+        >
+          <div
+            class="d-flex justify-content-between align-items-center cursor-pointer"
+            (click)="toggleFAQ(faq)"
+          >
+            <strong>{{ faq.question }}</strong>
+            <span>{{ faq.isOpen ? "▲" : "▼" }}</span>
+          </div>
+          <div *ngIf="faq.isOpen" class="faq-answer mt-2 px-2 text-muted">
+            {{ faq.answer }}
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+    </div>
+  </div>
+</section>

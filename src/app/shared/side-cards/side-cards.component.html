@@ -3,7 +3,7 @@
     class="card"
     *ngFor="let card of cards; let i = index"
     [style.transform]="getCardTransform(i)"
-    [style.zIndex]="hoveredIndex === i ? 999 : i + 10"
+    [style.zIndex]="hoveredIndex === i ? 99 : i + 10"
     [class.hovered]="hoveredIndex === i"
     [class.left-of-hover]="hoveredIndex !== null && i < hoveredIndex"
     [class.right-of-hover]="hoveredIndex !== null && i > hoveredIndex"

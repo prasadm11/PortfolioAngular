@@ -1,59 +1,75 @@
-# PortfolioAngular
+🧑‍💻 PortfolioAngular
+This is my personal developer portfolio built using Angular and styled with modern CSS techniques. It showcases my experience, skills, projects, and more—designed to reflect my creativity and engineering expertise.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+🔗 Live Site: pm11portfolio.netlify.app
 
-## Development server
+🚀 Features
+💡 Clean and responsive UI
 
-To start a local development server, run:
+🌐 Hosted on Netlify
 
-```bash
+🧩 Modular components
+
+🎨 Custom animations and effects
+
+🌍 Multi-page layout (About, Projects, Experience, etc.)
+
+🛠️ Tech Stack
+Framework: Angular v16+
+
+Styling: SCSS, Bootstrap, custom CSS animations
+
+Deployment: Netlify
+
+Others: Angular CLI, TypeScript
+
+🧪 Local Development
+Start Development Server
+bash
+Copy
+Edit
 ng serve
-```
+Open your browser at http://localhost:4200/. The app will reload automatically as you edit the code.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🧱 Code Scaffolding
+Use Angular CLI to generate components, directives, or pipes:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
+bash
+Copy
+Edit
 ng generate component component-name
-```
+Need help? Run:
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
+bash
+Copy
+Edit
 ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+🏗️ Building for Production
+bash
+Copy
+Edit
 ng build
-```
+The build output will be stored in the dist/ folder. Production builds are optimized by default.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
+✅ Running Unit Tests
+bash
+Copy
+Edit
 ng test
-```
+This runs unit tests using Karma.
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
+🔍 Running End-to-End Tests
+bash
+Copy
+Edit
 ng e2e
-```
+Note: Angular CLI no longer includes e2e by default. You may set up your preferred tool like Cypress or Playwright.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+📚 Resources
+Angular CLI Documentation
 
-## Additional Resources
+Angular Dev Guide
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Netlify Docs
+
+Feel free to fork, clone, and customize this project for your own portfolio!

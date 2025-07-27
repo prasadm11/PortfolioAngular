@@ -13,22 +13,22 @@ export class WorkComponent {
     meta: 'JSPM · 2024',
     title: 'AI Music Recommendation System',
     points: ['Onboarding increased to 12%', 'New user signups increased by 32%', 'Engagement increased by 20%'],
-    image: '/assets/ar-preview.png',
-    link: '/case-study/ar'
+    image: 'https://i0.wp.com/aimi.fm/wp-content/uploads/2025/03/Frame-23.png?resize=1024%2C768&quality=80&ssl=1',
+    link: 'https://github.com/prasadm11/AI-music-recommendation-system.git'
   },
   {
     meta: 'Neosoft · 2025',
     title: 'Vehicle Rental System',
     points: ['Bounce rate reduced by 15%', 'SEO score improved', 'Increased dashboard usage'],
-    image: '/assets/google-preview.png',
-    link: '/case-study/ar'
+    image: '/assets/img/projects/vehiclerental.png',
+    link: 'https://github.com/prasadm11/Vehicle-Rental-System.git'
   },
   {
     meta: 'Neosoft · 2025',
     title: 'Comunity Court Of justice',
     points: ['Conversion improved by 27%', 'Faster page loads', 'High user retention'],
-    image: '/assets/nike-preview.png',
-    link: '/case-study/ar'
+    image: '/assets/img/projects/ccjmac.png',
+    link: 'https://github.com/foram6615/CommunityCourt-FrontEnd.git'
   }
 ];
 

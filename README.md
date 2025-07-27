@@ -1,6 +1,6 @@
 # 🧑‍💻 PortfolioAngular
 
-This is a personal portfolio website built with **Angular 17** to showcase my work, skills, and professional background. It includes animated UI components, responsive layouts, and dynamic content management — deployed live using **Netlify**.
+This is a personal portfolio website built with **Angular 19.7.5** to showcase my work, skills, and professional background. It includes animated UI components, responsive layouts, and dynamic content management — deployed live using **Netlify**.
 
 🔗 **Live Site:** [https://pm11portfolio.netlify.app](https://pm11portfolio.netlify.app)
 
@@ -8,7 +8,7 @@ This is a personal portfolio website built with **Angular 17** to showcase my wo
 
 ## 🚀 Features
 
-- Built using Angular 17 with modular architecture
+- Built using Angular 19.7.5 with modular architecture
 - Fully responsive UI
 - Rich component-based design (About, Projects, Experience, FAQ, etc.)
 - Hosted on Netlify with CI/CD integration via GitHub
@@ -116,7 +116,7 @@ ng e2e
 **Prasad Mahajan**\
 📧 [pmmahajan2002@gmail.com](mailto\:pmmahajan2002@gmail.com)\
 🔗 [GitHub](https://github.com/prasadm11)\
-🔗 [LinkedIn](https://www.linkedin.com/in/prasadm11)
+🔗 [LinkedIn](https://www.linkedin.com/in/prasadmahajan21)
 
 ---
 

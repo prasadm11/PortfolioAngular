@@ -1,75 +1,124 @@
-🧑‍💻 PortfolioAngular
-This is my personal developer portfolio built using Angular and styled with modern CSS techniques. It showcases my experience, skills, projects, and more—designed to reflect my creativity and engineering expertise.
+# 🧑‍💻 PortfolioAngular
 
-🔗 Live Site: pm11portfolio.netlify.app
+This is a personal portfolio website built with **Angular 17** to showcase my work, skills, and professional background. It includes animated UI components, responsive layouts, and dynamic content management — deployed live using **Netlify**.
 
-🚀 Features
-💡 Clean and responsive UI
+🔗 **Live Site:** [https://pm11portfolio.netlify.app](https://pm11portfolio.netlify.app)
 
-🌐 Hosted on Netlify
+---
 
-🧩 Modular components
+## 🚀 Features
 
-🎨 Custom animations and effects
+- Built using Angular 17 with modular architecture
+- Fully responsive UI
+- Rich component-based design (About, Projects, Experience, FAQ, etc.)
+- Hosted on Netlify with CI/CD integration via GitHub
+- Smooth scroll, gradient themes, and animated elements
+- SSR support (optional setup for Angular Universal + Netlify)
 
-🌍 Multi-page layout (About, Projects, Experience, etc.)
+---
 
-🛠️ Tech Stack
-Framework: Angular v16+
+## 📆 Getting Started
 
-Styling: SCSS, Bootstrap, custom CSS animations
+### 🔧 Development Server
 
-Deployment: Netlify
+To start a local development server:
 
-Others: Angular CLI, TypeScript
-
-🧪 Local Development
-Start Development Server
-bash
-Copy
-Edit
+```bash
 ng serve
-Open your browser at http://localhost:4200/. The app will reload automatically as you edit the code.
+```
 
-🧱 Code Scaffolding
-Use Angular CLI to generate components, directives, or pipes:
+Navigate to: `http://localhost:4200/`\
+The app will auto-reload on changes.
 
-bash
-Copy
-Edit
+---
+
+## 🛠️ Project Structure
+
+- `src/app`: Angular components and modules
+- `assets/`: Images and static files
+- `angular.json`: Angular CLI project config
+- `netlify.toml`: Netlify deployment config (if using SSR)
+
+---
+
+## 🧱 Code Scaffolding
+
+To generate a new component using Angular CLI:
+
+```bash
 ng generate component component-name
-Need help? Run:
+```
 
-bash
-Copy
-Edit
+For more scaffolding options:
+
+```bash
 ng generate --help
-🏗️ Building for Production
-bash
-Copy
-Edit
+```
+
+---
+
+## 🏗️ Building the Project
+
+To compile the project:
+
+```bash
 ng build
-The build output will be stored in the dist/ folder. Production builds are optimized by default.
+```
 
-✅ Running Unit Tests
-bash
-Copy
-Edit
+This outputs the build artifacts to the `dist/` folder.
+
+---
+
+## 🧪 Running Unit Tests
+
+To execute unit tests using Karma:
+
+```bash
 ng test
-This runs unit tests using Karma.
+```
 
-🔍 Running End-to-End Tests
-bash
-Copy
-Edit
+---
+
+## 🧪 Running E2E Tests
+
+For end-to-end tests (you’ll need to set up a framework like Cypress or Protractor):
+
+```bash
 ng e2e
-Note: Angular CLI no longer includes e2e by default. You may set up your preferred tool like Cypress or Playwright.
+```
 
-📚 Resources
-Angular CLI Documentation
+---
 
-Angular Dev Guide
+## 🌐 Deployment on Netlify
 
-Netlify Docs
+- Git-based deployment enabled with automatic builds
+- If using Angular SSR, ensure `server.ts` is Netlify-compatible
+- Example: Use `@angular/ssr` and `@netlify/angular-runtime`
 
-Feel free to fork, clone, and customize this project for your own portfolio!
+```toml
+# netlify.toml (basic)
+[functions]
+  included_files = ["dist/**"]
+```
+
+---
+
+## 📚 Resources
+
+- [Angular CLI Docs](https://angular.dev/tools/cli)
+- [Angular SSR with Netlify](https://docs.netlify.com)
+- [Netlify Deployment Docs](https://docs.netlify.com/configure-builds/get-started)
+
+---
+
+## 👤 Author
+
+**Prasad Mahajan**\
+📧 [pmmahajan2002@gmail.com](mailto\:pmmahajan2002@gmail.com)\
+🔗 [GitHub](https://github.com/prasadm11)\
+🔗 [LinkedIn](https://www.linkedin.com/in/prasadm11)
+
+---
+
+> Built with ❤️ using Angular
+

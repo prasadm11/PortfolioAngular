@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-side-cards',
@@ -7,8 +7,16 @@ import { Component } from '@angular/core';
   templateUrl: './side-cards.component.html',
   styleUrl: './side-cards.component.css',
 })
-export class SideCardsComponent {
+export class SideCardsComponent implements OnInit, OnDestroy {
   hoveredIndex: number | null = null;
+  isMobile = false;
+  animationId: number | null = null;
+  speed = 0.7; // pixels per frame
+  isDragging = false;
+  touchStartX = 0;
+  scrollLeft = 0;
+
+  cardWidth = 230;
 
   cards = [
     { image: 'assets/img/sidecard/img/img4.jpg' },
@@ -18,11 +26,54 @@ export class SideCardsComponent {
     { image: 'assets/img/sidecard/img/img5.jpg' },
   ];
 
-  
+  clonedCards = [...this.cards];
+
+  ngOnInit() {
+    this.checkMobileView();
+    if (this.isMobile) {
+      // Clone cards for seamless looping
+      this.clonedCards = [...this.cards, ...this.cards];
+      setTimeout(() => this.startAutoScroll(), 1000);
+    }
+  }
+
+  ngOnDestroy() {
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+    }
+  }
+
+  @HostListener('window:resize')
+  checkMobileView() {
+    this.isMobile = window.innerWidth <= 768;
+  }
+
+  startAutoScroll() {
+    const container = document.querySelector('.side-cards-container');
+    if (!container) return;
+
+    const scrollWidth = container.scrollWidth / 2; // Since we duplicated the cards
+
+    const animate = () => {
+      this.scrollLeft += this.speed;
+      
+      // Reset to start when we've scrolled halfway
+      if (this.scrollLeft >= scrollWidth) {
+        this.scrollLeft = 0;
+      }
+
+      container.scrollLeft = this.scrollLeft;
+      this.animationId = requestAnimationFrame(animate);
+    };
+
+    this.animationId = requestAnimationFrame(animate);
+  }
 
   getCardTransform(index: number): string {
-    const overlap = 90; // horizontal shift between cards
-    const rotate = (index - (this.cards.length - 1) / 2) * 4; // rotation for fan-like layout
+    if (this.isMobile) return 'none';
+
+    const overlap = 90;
+    const rotate = (index - (this.cards.length - 1) / 2) * 4;
 
     if (this.hoveredIndex === null) {
       const translateX = index * overlap;
@@ -36,26 +87,40 @@ export class SideCardsComponent {
     }
 
     const direction = index < this.hoveredIndex ? -1 : 1;
-    const shift = 40; // how far non-hovered cards move away
+    const shift = 40;
     const translateX = index * overlap + direction * shift;
 
     return `translateX(${translateX}px) scale(0.95) rotate(${rotate}deg)`;
   }
 
-  handleMouseMove(event: MouseEvent, index: number): void {
-    const card = event.currentTarget as HTMLElement;
-    const rect = card.getBoundingClientRect();
-    const x = event.clientX - rect.left - rect.width / 2;
-    const y = event.clientY - rect.top - rect.height / 2;
-    const rotateX = (-y / 20).toFixed(2);
-    const rotateY = (x / 20).toFixed(2);
-    card.style.transform += ` rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  // Mobile touch events
+  onTouchStart(event: TouchEvent) {
+    if (!this.isMobile) return;
+    this.touchStartX = event.touches[0].clientX;
+    this.isDragging = true;
+    if (this.animationId) {
+      cancelAnimationFrame(this.animationId);
+      this.animationId = null;
+    }
   }
 
-  resetTilt(index: number): void {
-    const cards = document.querySelectorAll('.card');
-    const card = cards[index] as HTMLElement;
-    card.style.transform = this.getCardTransform(index);
-    this.hoveredIndex = null;
+  onTouchMove(event: TouchEvent) {
+    if (!this.isMobile || !this.isDragging) return;
+    const container = document.querySelector('.side-cards-container');
+    if (!container) return;
+    
+    const touchX = event.touches[0].clientX;
+    const diff = this.touchStartX - touchX;
+    this.scrollLeft += diff;
+    container.scrollLeft = this.scrollLeft;
+    this.touchStartX = touchX;
+  }
+
+  onTouchEnd() {
+    if (!this.isMobile) return;
+    this.isDragging = false;
+    if (!this.animationId) {
+      this.startAutoScroll();
+    }
   }
 }

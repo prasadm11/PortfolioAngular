@@ -11,17 +11,14 @@ export class SideCardsComponent {
   hoveredIndex: number | null = null;
 
   cards = [
-    // { image: 'https://images.pexels.com/photos/1697912/pexels-photo-1697912.jpeg' },
-    // { image: 'https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg' },
-    // { image: 'https://images.pexels.com/photos/1848565/pexels-photo-1848565.jpeg' },
-    // { image: 'https://images.pexels.com/photos/1019771/pexels-photo-1019771.jpeg' },
-    // { image: 'https://images.pexels.com/photos/13374150/pexels-photo-13374150.jpeg' },
     { image: 'assets/img/sidecard/img/img4.jpg' },
     { image: 'assets/img/sidecard/img/img2.jpg' },
     { image: 'assets/img/sidecard/img/img3.jpg' },
     { image: 'assets/img/sidecard/img/img1 (1).jpg' },
     { image: 'assets/img/sidecard/img/img5.jpg' },
   ];
+
+  
 
   getCardTransform(index: number): string {
     const overlap = 90; // horizontal shift between cards

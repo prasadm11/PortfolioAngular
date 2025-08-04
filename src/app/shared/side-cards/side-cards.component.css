@@ -50,3 +50,42 @@
   pointer-events: none;
   display: block;
 }
+/* Mobile Carousel Styles */
+@media (max-width: 768px) {
+  .side-cards-container {
+    padding-top: 0;
+    height: 320px;
+    padding-right: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+    align-items: center;
+  }
+
+  .side-cards-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar */
+  }
+
+  .card {
+    position: relative;
+    flex: 0 0 auto; /* Don't grow or shrink */
+    width: 200px; /* Original width */
+    height: 270px; /* Original height */
+    margin: 0 15px; /* Space between cards */
+    scroll-snap-align: center;
+    transform: none !important;
+  }
+
+  .card:first-child {
+    margin-left: 20px;
+  }
+
+  .card:last-child {
+    margin-right: 20px;
+  }
+
+  .card:hover {
+    transform: none !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  }
+}

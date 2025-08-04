@@ -317,16 +317,22 @@ p {
 
 @media (max-width: 1200px) {
   .dashboard-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+
+  } 
+  .current-read img {
+    width: 80%;
+    height: 80%;
+  }
+  .current-read {
+    min-height: 250px;
   }
 
-  
-
-  
+ 
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 700px) {
   .dashboard-grid {
     grid-template-columns: 1fr;
   }
@@ -338,5 +344,10 @@ p {
     width: 40px;
     height: 40px;
   }
+  .current-read img {
+    width: 80%;
+    height: 80%;
+  }
   
 }
+

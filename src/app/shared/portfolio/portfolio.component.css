@@ -1,10 +1,10 @@
 .portfolio-container {
+  padding-top: 2rem;
   display: flex;
-  margin-top: 100px;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Full viewport height */
-  background: transparent;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .dashboard-grid {
@@ -13,32 +13,36 @@
   gap: 20px;
   width: 80%;
   max-width: 100%;
-  height: auto; /* Allow height to grow based on content */
   align-items: stretch; /* Ensure all columns stretch equally */
   background: transparent;
 }
 
 /* Each main column */
-.dashboard-grid > div {
+.dashboard-grid > section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: transparent;
-  padding: 0;
+  height: 100%;
+  min-height: 100%;
 }
 
 /* Cards inside each column */
 .card {
-  background-color: #ffffff0d;
-  border-radius: 12px;
+  background: #ffffff0d;
   padding: 10px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  flex: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .current-read {
   position: relative;
   height: 60%;
+  min-height: 300px;
   width: 100%;
   overflow: hidden;
   border-radius: 12px;
@@ -104,18 +108,8 @@ p {
 
 
 .logos-carousel {
-  /* width: 70%; */
   overflow: hidden;
-  /* position: relative; */
-  /* margin-top: 10px; */
   margin-bottom: 10px;
-  /* mask-image: linear-gradient(
-    to right,
-    transparent 0%,
-    black 15%,
-    black 85%,
-    transparent 100%
-  ); */
   -webkit-mask-image: linear-gradient(
     to right,
     transparent 0%,
@@ -123,16 +117,14 @@ p {
     black 85%,
     transparent 100%
   );
-  /* transform: scale(0.8); */
-  /* transform-origin: center; */
 }
 
 /* Track of scrolling logos */
 .logos-track {
   display: flex;
-  gap: 10px;
+  gap: 1rem;
   animation: scrollLoops 2s linear infinite;
-  width: 80%;
+  /* width: 80%; */
 }
 
 /* Individual logo styles */
@@ -262,6 +254,7 @@ p {
 #leaflet-map {
   width: 100%;
   height: 100%;
+  min-height: 300px;
   border-radius: 12px;
   z-index: 1;
 }
@@ -303,6 +296,7 @@ p {
   position: relative;
   height: 100%;
   width: 100%;
+  min-height: 180px;
 }
 
 .tag {
@@ -319,4 +313,30 @@ p {
       rgba(167, 252, 238, 0.74) 100%
     );
   transition: transform 0.2s, top 0.4s, left 0.4s;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  
+
+  
+}
+
+
+@media (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  .logos-track img {
+    width: 32px;
+    height: 32px;
+  }
+  .avatar img {
+    width: 40px;
+    height: 40px;
+  }
+  
 }

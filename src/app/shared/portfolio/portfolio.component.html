@@ -1,45 +1,41 @@
 <div class="portfolio-container">
   <div class="dashboard-grid">
-    <!-- Current Read -->
-    <div>
-      <div>
+    <!-- Section: About -->
+    <section>
+      <header>
         <h3>BEYOND PORTFOLIO</h3>
         <h1>Let's know more about me</h1>
-      </div>
-      <div class="card current-read">
-        <h4>Current Read</h4>
+      </header>
+      <article class="card current-read" aria-labelledby="current-read-heading">
+        <h4 id="current-read-heading">Current Read</h4>
         <p>The Psychology of Money ・ Morgan Housel</p>
         <img
           src="https://bookpadho.com/wp-content/uploads/2025/02/1740040199.png"
-          alt="The Psychology of Money Book"
+          alt="Cover of the book 'The Psychology of Money' by Morgan Housel"
         />
-      </div>
-    </div>
+      </article>
+    </section>
 
-    <!-- My Tech Stacks -->
-    <div>
-      <div class="card tech-stack">
-        <h4>My Tech Stacks</h4>
+    <!-- Section: Tech Stacks + Designers -->
+    <section>
+      <article class="card tech-stack" aria-labelledby="tech-stack-heading">
+        <h4 id="tech-stack-heading">My Tech Stacks</h4>
         <p>
           Designed key features for embedding in-platform data widgets, charts,
         </p>
-        <div class="logos-carousel">
+        <div class="logos-carousel" role="region" aria-label="Scrolling list of tech logos">
           <div class="logos-track">
-            <!-- Original set -->
             <ng-container *ngFor="let logo of logos">
-              <img [src]="logo" alt="tech-logo" />
+              <img [src]="logo" alt="Tech logo" />
             </ng-container>
-
-            <!-- Duplicate set for seamless loop -->
             <ng-container *ngFor="let logo of logos">
-              <img [src]="logo" alt="tech-logo" />
+              <img [src]="logo" alt="Tech logo" />
             </ng-container>
           </div>
         </div>
-      </div>
+      </article>
 
-      <!-- portfolio.component.html -->
-      <div class="card svg-icon">
+      <div class="card svg-icon" aria-hidden="true">
         <dotlottie-wc
           src="https://lottie.host/04469816-23cd-4f1a-944e-2cb58dd17a43/dxWsCoLG5F.lottie"
           style="width: 100%; height: 100%"
@@ -49,54 +45,48 @@
         ></dotlottie-wc>
       </div>
 
-      <!-- Admired Designers -->
-      <div class="card admired-designers">
-        <h4>Some designers I admire <span>😍</span></h4>
+      <article class="card admired-designers">
+        <h4>Some designers I admire <span role="img" aria-label="smiling face with hearts">😍</span></h4>
         <div class="avatar-row">
           <div class="avatar" data-name="Designer 1">
             <img
               src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png"
-              alt="Designer 1"
+              alt="Designer 1 avatar"
             />
           </div>
           <div class="avatar" data-name="Designer 2">
             <img
               src="https://cdn-icons-png.flaticon.com/128/3641/3641437.png"
-              alt="Designer 2"
+              alt="Designer 2 avatar"
             />
           </div>
           <div class="avatar" data-name="Designer 3">
             <img
               src="https://cdn-icons-png.flaticon.com/128/149/149071.png"
-              alt="Designer 3"
+              alt="Designer 3 avatar"
             />
           </div>
           <div class="avatar" data-name="Designer 4">
             <img
               src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png"
-              alt="Designer 4"
+              alt="Designer 4 avatar"
             />
           </div>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
 
-    <div>
-      <!-- Location Map -->
-      <div class="card map">
+    <!-- Section: Location + Persona -->
+    <section>
+      <article class="card map" aria-label="Location Map">
         <div id="leaflet-map"></div>
-        <!-- <div class="leaflet-pulsing-icon "></div> -->
-      </div>
+      </article>
 
-      <!-- Persona -->
-      <div class="card persona">
+      <article class="card persona" aria-labelledby="persona-heading">
         <div class="persona-container">
-          <h4>My Persona</h4>
-          <button (click)="resetTags()" class="refresh-btn">
-            <img
-              src="assets\img\refresh-svgrepo-com.svg"
-              alt="Refresh"
-            />
+          <h4 id="persona-heading">My Persona</h4>
+          <button (click)="resetTags()" class="refresh-btn" aria-label="Refresh tags">
+            <img src="assets/img/refresh-svgrepo-com.svg" alt="Refresh icon" />
           </button>
         </div>
 
@@ -116,7 +106,7 @@
             {{ tag.label }}
           </span>
         </div>
-      </div>
-    </div>
+      </article>
+    </section>
   </div>
 </div>

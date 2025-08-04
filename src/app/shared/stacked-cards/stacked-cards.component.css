@@ -1,4 +1,4 @@
-.card-container {
+/* .card-container {
   min-height: 300vh;
   background: #0f172a;
   padding: 50px;
@@ -75,4 +75,80 @@
   border-radius: 10px;
   object-fit: cover;
   max-height: 300px;
+} */
+ .card-container {
+  min-height: 300vh;
+  background: #0f172a;
+  padding: 50px;
 }
+
+.card-wrapper {
+  position: relative;
+}
+
+.card {
+  position: sticky;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  padding: 30px;
+  margin-bottom: 20px;
+  height: auto;
+  transition: transform 0.3s;
+  z-index: 1;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  text-align: center;
+}
+
+.gradient-text {
+  background: linear-gradient(99deg, #c6fca6 0%, rgba(167, 252, 238, 0.74) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.description {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* No flex needed now, since Bootstrap grid handles layout */
+.case-study-card {
+  margin-top: 20px;
+}
+
+/* Optional spacing between card text and image on smaller screens */
+.card-text {
+  padding-right: 15px;
+}
+
+.card-image {
+  padding-left: 15px;
+}
+
+.card-image img {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  max-height: 300px;
+}
+

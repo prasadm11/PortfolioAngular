@@ -222,3 +222,160 @@
     transform: scale(1.05);
   }
 }
+
+/*  Medium screens (tablets, 1024px and below) */
+
+@media (max-width: 1024px) {
+  .work-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .description {
+    margin-bottom: 40px;
+  }
+
+  .case-study-card {
+    width: 100%;
+    min-height: auto;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .card-text {
+    order: 2;
+  }
+
+  .card-image {
+    order: 1;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .blurred-gradient {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .work-section {
+    padding: 60px 20px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .description {
+    margin-bottom: 40px;
+  }
+
+  .case-study-card {
+    width: 100%;
+    min-height: auto;
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .card-text {
+    order: 2;
+  }
+
+  .card-image {
+    order: 1;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .blurred-gradient {
+    width: 400px;
+    height: 400px;
+    top: -100px;
+    left: -200px;
+  }
+}
+
+/* Small screens (mobile, 480px and below) */
+@media (max-width: 480px) {
+  .work-section {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+  }
+
+  .case-study-card {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .project-meta {
+    font-size: 0.8rem;
+  }
+
+  .project-title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+
+  .project-highlights li {
+    font-size: 0.9rem;
+  }
+
+  .btn-light {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+  }
+
+  .blurred-gradient {
+    width: 300px;
+    height: 300px;
+    top: -50px;
+    left: -150px;
+    filter: blur(300px);
+  }
+
+  /* Adjust the stacked card positioning for mobile */
+  .stacked-card {
+    transform: scale(0.95);
+    margin-bottom: 10px;
+  }
+}
+
+/* Very small screens (320px and below) */
+@media (max-width: 320px) {
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.1rem;
+  }
+
+  .case-study-card {
+    padding: 15px;
+  }
+
+  .btn-light {
+    width: 100%;
+    text-align: center;
+  }
+}

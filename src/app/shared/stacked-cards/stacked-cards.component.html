@@ -1,4 +1,4 @@
-<div class="card-container">
+<!-- <div class="card-container">
   <div class="card-wrapper">
     <div
       class="card"
@@ -27,6 +27,43 @@
           <img [src]="work.image" [alt]="work.title" />
         </div>
       </div>
+    </div>
+  </div>
+</div> -->
+<div class="card-container">
+  <div class="card-wrapper">
+    <div
+      class="card"
+      *ngFor="let work of works; let i = index"
+      [ngStyle]="{
+        'top': (i === works.length - 1 ? '0px' : (100 + i * 50) + 'px')
+      }"
+    >
+      <p class="subtitle"> 
+        <span class="gradient-text">CURATED WORK</span>
+      </p>
+
+      <h2 class="section-title">Featured Work</h2>
+      <p class="description">Compilation of work that evoke my sense of pride</p>
+
+      <div class="case-study-card row align-items-center">
+        <div class="col-12 col-md-6 mb-3 mb-md-0">
+          <div class="card-text">
+            <p class="project-meta">{{ work.meta }}</p>
+            <h3 class="project-title">{{ work.title }}</h3>
+            <ul class="project-highlights">
+              <li *ngFor="let point of work.highlights">{{ point }}</li>
+            </ul>
+            <a [href]="work.link" class="btn btn-light">View Case Study →</a>
+          </div>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="card-image">
+            <img [src]="work.image" [alt]="work.title" class="img-fluid rounded" />
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </div>

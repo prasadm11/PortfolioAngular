@@ -132,7 +132,7 @@ p {
   display: flex;
   gap: 10px;
   animation: scrollLoops 2s linear infinite;
-  width: 80%;
+  /* width: 80%; */
 }
 
 /* Individual logo styles */
@@ -153,7 +153,6 @@ p {
   50%{
     transform: translateX(-30%);
   }
-
   100% {
     transform: translateX(-100%);
   }
@@ -319,4 +318,13 @@ p {
       rgba(167, 252, 238, 0.74) 100%
     );
   transition: transform 0.2s, top 0.4s, left 0.4s;
+}
+.gradient-text {
+  background-image: linear-gradient(99.6983deg, rgba(198, 252, 166, 1) 0%, rgba(167, 252, 238, 0.74) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: "Inter-SemiBold", "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
 }

@@ -24,20 +24,20 @@ export class ExperienceComponent {
       location: 'Delhi, India',
       description:
         'Worked on widgets and charts, generating technical content and collaborating with other designers.',
-      collaborators: [
-        'assets/team1.png',
-        'assets/team2.png',
-        'assets/team3.png',
-      ],
+      // collaborators: [
+      //   'assets/team1.png',
+      //   'assets/team2.png',
+      //   'assets/team3.png',
+      // ],
     },
-    {
-      role: 'Product Designer',
-      company: 'Toppr',
-      duration: 'May 2022 – Aug 2022',
-      location: 'Bangalore, India',
-      description:
-        'Focused on visual design and platform elements to improve data-driven interactions for users.',
-    },
+    // {
+    //   role: 'Product Designer',
+    //   company: 'Toppr',
+    //   duration: 'May 2022 – Aug 2022',
+    //   location: 'Bangalore, India',
+    //   description:
+    //     'Focused on visual design and platform elements to improve data-driven interactions for users.',
+    // },
   ];
 
 }

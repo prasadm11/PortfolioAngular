@@ -2,11 +2,20 @@ import { Component, HostListener, OnInit, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
-  imports: [],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
-export class HeaderComponent implements OnInit,AfterViewInit{
+export class HeaderComponent implements OnInit, AfterViewInit {
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
+
   ngOnInit() {
     this.setInitialActive();
   }
@@ -15,42 +24,36 @@ export class HeaderComponent implements OnInit,AfterViewInit{
     this.updateActiveNav();
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll() {
     this.updateActiveNav();
   }
 
   private setInitialActive() {
-    const homeLink = document.querySelector('#mainNav .nav-link[href="#home"]') as HTMLElement;
-    if (homeLink) {
-      homeLink.classList.add('active');
-    }
+    const homeLink = document.querySelector('#mainNav .nav-link[href="#home"]');
+    homeLink?.classList.add('active');
   }
 
   private updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('#mainNav .nav-link');
-    
+
     let currentSection = '';
     const scrollPosition = window.scrollY + 100;
 
-    sections.forEach((section: Element) => {
-      const htmlSection = section as HTMLElement;
-      const sectionTop = htmlSection.offsetTop;
-      const sectionHeight = htmlSection.clientHeight;
-      
-      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+    sections.forEach((section) => {
+      const top = (section as HTMLElement).offsetTop;
+      const height = (section as HTMLElement).clientHeight;
+      if (scrollPosition >= top && scrollPosition < top + height) {
         currentSection = section.getAttribute('id') || '';
       }
     });
 
-    navLinks.forEach((link: Element) => {
-      const htmlLink = link as HTMLElement;
-      htmlLink.classList.remove('active');
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
       if (link.getAttribute('href') === `#${currentSection}`) {
-        htmlLink.classList.add('active');
+        link.classList.add('active');
       }
     });
   }
-
 }

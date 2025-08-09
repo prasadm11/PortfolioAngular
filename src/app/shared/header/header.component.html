@@ -1,18 +1,35 @@
 <div class="custom-header sticky-top z-999">
   <div class="container d-flex justify-content-center py-3">
-    <ul class="nav nav-pills px-4 py-2 shadow custom-nav" id="mainNav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#home">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#work">Works</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#aboutme">About</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#faq">FAQ</a>
-      </li>
+
+    <!-- Desktop Navigation -->
+    <ul class="nav nav-pills px-4 py-2 shadow custom-nav d-none d-md-flex" id="mainNav">
+      <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+      <li class="nav-item"><a class="nav-link" href="#work">Works</a></li>
+      <li class="nav-item"><a class="nav-link" href="#aboutme">About</a></li>
+      <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
     </ul>
+
+    <!-- Mobile Navigation -->
+    <div class="nav nav-pills px-4 py-2 shadow custom-nav flex-column align-items-stretch d-md-none w-100">
+      <!-- Top row with label & hamburger -->
+      <div class="d-flex justify-content-between align-items-center w-100">
+        <!-- <span class="fw-bold text-white">Menu</span> -->
+         <img src="https://avatars.githubusercontent.com/u/116238476?v=4"
+         alt="Menu Icon"
+         style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+        <div class="hamburger" [class.open]="isMenuOpen" (click)="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <!-- Expanding nav items -->
+      <div class="mobile-links" [class.open]="isMenuOpen">
+        <a class="nav-link" href="#home" (click)="closeMenu()">Home</a>
+        <a class="nav-link" href="#work" (click)="closeMenu()">Works</a>
+        <a class="nav-link" href="#aboutme" (click)="closeMenu()">About</a>
+        <a class="nav-link" href="#faq" (click)="closeMenu()">FAQ</a>
+      </div>
+    </div>
+
   </div>
 </div>

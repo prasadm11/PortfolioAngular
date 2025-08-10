@@ -13,7 +13,11 @@ interface Faq {
 })
 
 export class FaqComponent implements OnInit{
-  
+  emailSubject = "Let's talk about a project";
+emailBody = "Hi Prasad,\n\nI'd like to discuss...";
+get mailToLink(): string {
+  return `mailto:pmmahajan2002@gmail.com?subject=${encodeURIComponent(this.emailSubject)}&body=${encodeURIComponent(this.emailBody)}`;
+}
   readonly faqs: Faq[] = [
     {
       question: 'Are you available to hire full time?',

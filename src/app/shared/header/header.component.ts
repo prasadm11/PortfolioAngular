@@ -5,12 +5,12 @@ import { filter } from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit, AfterViewInit {
   isMenuOpen = false;
-currentRoute = '';
-activeSection = '';  
+  currentRoute = '';
+  activeSection = '';
   constructor(private router: Router) {}
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -23,12 +23,12 @@ activeSection = '';
   ngOnInit() {
     this.setInitialActive();
     // Subscribe to router events to track current URL
-    this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: NavigationEnd) => {
-      this.currentRoute = event.urlAfterRedirects;
-      this.updateActiveNav();
-    });
+    this.router.events
+      .pipe(filter((event) => event instanceof NavigationEnd))
+      .subscribe((event: NavigationEnd) => {
+        this.currentRoute = event.urlAfterRedirects;
+        this.updateActiveNav();
+      });
   }
 
   ngAfterViewInit() {
@@ -47,24 +47,24 @@ activeSection = '';
 
   private updateActiveNav() {
     if (this.currentRoute === '/about') {
-    this.activeSection = 'aboutme';
-    // Remove all active classes first
-    const navLinks = document.querySelectorAll('#mainNav .nav-link');
-    navLinks.forEach((link) => link.classList.remove('active'));
-    // Then set About link active manually
-    navLinks.forEach((link) => {
-      if (link.getAttribute('href') === '#aboutme') {
-        link.classList.add('active');
-      }
-    });
-    return;
-  }
+      this.activeSection = 'aboutme';
+      // Remove all active classes first
+      const navLinks = document.querySelectorAll('#mainNav .nav-link');
+      navLinks.forEach((link) => link.classList.remove('active'));
+      // Then set About link active manually
+      navLinks.forEach((link) => {
+        if (link.getAttribute('href') === '#aboutme') {
+          link.classList.add('active');
+        }
+      });
+      return;
+    }
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('#mainNav .nav-link');
 
     let currentSection = '';
     const scrollPosition = window.scrollY + 100;
-    
+
     sections.forEach((section) => {
       const top = (section as HTMLElement).offsetTop;
       const height = (section as HTMLElement).clientHeight;

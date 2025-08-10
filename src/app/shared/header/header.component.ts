@@ -44,6 +44,45 @@ export class HeaderComponent implements OnInit, AfterViewInit {
     const homeLink = document.querySelector('#mainNav .nav-link[href="#home"]');
     homeLink?.classList.add('active');
   }
+  scrollToSection(event: Event, sectionId: string) {
+  event.preventDefault();
+  this.closeMenu();
+  let headerOffset=0;
+  if (window.innerWidth <= 768) { // mobile + tablet
+    switch (sectionId) {
+      case 'home':
+        headerOffset = 140; // smaller offset
+        break;
+      case 'work':
+        headerOffset = 170; // larger offset
+        break;
+      case 'aboutme':
+        headerOffset = 170; // different again
+        break;
+      case 'faq':
+        headerOffset = 120;
+        break;
+      default:
+        headerOffset = 80; // fallback
+    }
+  } else {
+    headerOffset = 120; // desktop default
+  }
+
+  // const headerOffset = window.innerWidth <= 768 ? 140 : 0; // adjust to your actual header height
+  const element = document.getElementById(sectionId);
+
+  if (element) {
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - headerOffset;
+
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+  }
+}
+
 
   private updateActiveNav() {
     if (this.currentRoute === '/about') {

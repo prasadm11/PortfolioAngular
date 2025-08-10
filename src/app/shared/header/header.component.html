@@ -26,10 +26,10 @@
 
       <!-- Expanding nav items -->
       <div class="mobile-links" [class.open]="isMenuOpen">
-        <a class="nav-link" href="#home" (click)="closeMenu()">Home</a>
-        <a class="nav-link" href="#work" (click)="closeMenu()">Works</a>
-        <a class="nav-link" href="#aboutme" (click)="closeMenu()">About</a>
-        <a class="nav-link" href="#faq" (click)="closeMenu()">FAQ</a>
+        <a class="nav-link" href="#home" (click)="scrollToSection($event, 'home')">Home</a>
+        <a class="nav-link" href="#work" (click)="scrollToSection($event, 'work')">Works</a>
+        <a class="nav-link" href="#aboutme" (click)="scrollToSection($event, 'aboutme')">About</a>
+        <a class="nav-link" href="#faq" (click)="scrollToSection($event, 'faq')">FAQ</a>
       </div>
     </div>
 

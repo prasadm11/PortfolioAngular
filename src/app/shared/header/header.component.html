@@ -14,9 +14,11 @@
       <!-- Top row with label & hamburger -->
       <div class="d-flex justify-content-between align-items-center w-100">
         <!-- <span class="fw-bold text-white">Menu</span> -->
-         <img src="https://avatars.githubusercontent.com/u/116238476?v=4"
+        <a href="#home" (click)="closeMenu()">
+         <img src="/assets/img/logohamberg.jpeg"
          alt="Menu Icon"
          style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover;">
+        </a>
         <div class="hamburger" [class.open]="isMenuOpen" (click)="toggleMenu()">
           <span></span><span></span><span></span>
         </div>

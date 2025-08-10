@@ -19,11 +19,11 @@ export class SideCardsComponent implements OnInit, OnDestroy {
   cardWidth = 230;
 
   cards = [
-    { image: 'assets/img/sidecard/img/img4.jpg' },
-    { image: 'assets/img/sidecard/img/img2.jpg' },
-    { image: 'assets/img/sidecard/img/img3.jpg' },
-    { image: 'assets/img/sidecard/img/img1 (1).jpg' },
-    { image: 'assets/img/sidecard/img/img5.jpg' },
+    { image: 'assets/img/sidecard/img/img4.webp' },
+    { image: 'assets/img/sidecard/img/img2.webp' },
+    { image: 'assets/img/sidecard/img/img3.webp' },
+    { image: 'assets/img/sidecard/img/img1 (1).webp' },
+    { image: 'assets/img/sidecard/img/img5.webp' },
   ];
 
   clonedCards = [...this.cards];

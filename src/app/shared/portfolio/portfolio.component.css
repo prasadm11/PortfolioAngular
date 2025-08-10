@@ -565,3 +565,65 @@ p {
     height: 46px;
   }
 }
+@media screen and (max-width: 393px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr; /* single column layout */
+    width: 100% !important; /* full width */
+    max-width: 100% !important; /* prevent overflow */
+    padding: 0 10px; /* optional side padding */
+    box-sizing: border-box; /* include padding in width */
+    gap: 20px;
+  }
+
+  .dashboard-grid > div {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    margin: 0 auto; /* center horizontally if needed */
+    box-sizing: border-box;
+  }
+
+  /* Make sure cards inside shrink well */
+  .card {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  
+  .card img {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .tech-stack .logos-track img {
+    height: 40px !important; 
+    width: auto !important;
+  }
+  .avatar img {
+    width: 45px !important;
+    height: 45px !important;
+    border: 2px solid white;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
+  }
+  .avatar {
+    flex-shrink: 0 !important;
+    width: 45px !important;
+    height: 45px !important;
+    margin-left: 0 !important; /* Reset margin if causing overlap */
+  } 
+}
+
+
+.avatar {
+  flex-shrink: 0; /* Prevent avatars from shrinking */
+  width: 45px;     /* Fix width to match image */
+  height: 45px;    /* Fix height to match image */
+}
+.avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* instead of negative margin for better spacing */
+  padding-left: 7px;
+}

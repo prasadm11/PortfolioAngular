@@ -1,5 +1,13 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  HostListener,
+  ElementRef,
+  AfterViewInit,
+} from '@angular/core';
+import { ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-side-cards',
@@ -7,7 +15,7 @@ import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
   templateUrl: './side-cards.component.html',
   styleUrl: './side-cards.component.css',
 })
-export class SideCardsComponent implements OnInit, OnDestroy {
+export class SideCardsComponent implements OnInit, OnDestroy, AfterViewInit {
   hoveredIndex: number | null = null;
   isMobile = false;
   animationId: number | null = null;
@@ -15,7 +23,6 @@ export class SideCardsComponent implements OnInit, OnDestroy {
   isDragging = false;
   touchStartX = 0;
   scrollLeft = 0;
-
   cardWidth = 230;
 
   cards = [
@@ -27,13 +34,20 @@ export class SideCardsComponent implements OnInit, OnDestroy {
   ];
 
   clonedCards = [...this.cards];
-
+  @ViewChild('cardsContainer', { static: false })
+  containerRef!: ElementRef<HTMLDivElement>;
   ngOnInit() {
     this.checkMobileView();
     if (this.isMobile) {
       // Clone cards for seamless looping
       this.clonedCards = [...this.cards, ...this.cards];
       setTimeout(() => this.startAutoScroll(), 1000);
+    }
+  }
+  ngAfterViewInit() {
+    if (this.isMobile) {
+      this.clonedCards = [...this.cards, ...this.cards];
+      requestAnimationFrame(() => this.startAutoScroll());
     }
   }
 
@@ -49,14 +63,14 @@ export class SideCardsComponent implements OnInit, OnDestroy {
   }
 
   startAutoScroll() {
-    const container = document.querySelector('.side-cards-container');
+    const container = this.containerRef.nativeElement;
     if (!container) return;
 
     const scrollWidth = container.scrollWidth / 2; // Since we duplicated the cards
 
     const animate = () => {
       this.scrollLeft += this.speed;
-      
+
       // Reset to start when we've scrolled halfway
       if (this.scrollLeft >= scrollWidth) {
         this.scrollLeft = 0;
@@ -106,12 +120,19 @@ export class SideCardsComponent implements OnInit, OnDestroy {
 
   onTouchMove(event: TouchEvent) {
     if (!this.isMobile || !this.isDragging) return;
-    const container = document.querySelector('.side-cards-container');
+    const container = this.containerRef?.nativeElement;
     if (!container) return;
-    
+
     const touchX = event.touches[0].clientX;
     const diff = this.touchStartX - touchX;
     this.scrollLeft += diff;
+
+    // Clamp scrollLeft so it stays within bounds (optional, safer UX)
+    if (this.scrollLeft < 0) this.scrollLeft = 0;
+    if (this.scrollLeft > container.scrollWidth - container.clientWidth) {
+      this.scrollLeft = container.scrollWidth - container.clientWidth;
+    }
+
     container.scrollLeft = this.scrollLeft;
     this.touchStartX = touchX;
   }
@@ -119,6 +140,11 @@ export class SideCardsComponent implements OnInit, OnDestroy {
   onTouchEnd() {
     if (!this.isMobile) return;
     this.isDragging = false;
+    // Sync scrollLeft from the actual container's scrollLeft for smooth restart
+    const container = this.containerRef?.nativeElement;
+    if (container) {
+      this.scrollLeft = container.scrollLeft;
+    }
     if (!this.animationId) {
       this.startAutoScroll();
     }

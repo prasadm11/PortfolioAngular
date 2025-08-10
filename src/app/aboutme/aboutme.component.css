@@ -12,8 +12,8 @@
   bottom: -15px;
   font-weight: 600;
   font-size: 14px;
-  background-color: rgb(54, 54, 52); /* White background */
-  color: #000; /* fallback if gradient fails */
+  background-color: rgb(54, 54, 52);
+  color: #000; 
 }
 
 /* Gradient text styling */

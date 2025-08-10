@@ -100,14 +100,6 @@
 }
 
 
-.availability-badge {
-  display: flex;
-  align-items: center;
-  color: rgba(255, 255, 255, 0.8);
-  font-family: 'Manrope', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-}
 
 .glow-wrapper {
   position: relative;
@@ -142,6 +134,17 @@
   transform: translate(-50%, -50%);
   z-index: 1;
   animation: ringPulse 2s infinite ease-in-out;
+}
+
+.description-text {
+  font-family: 'Manrope', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 @keyframes coreFlicker {

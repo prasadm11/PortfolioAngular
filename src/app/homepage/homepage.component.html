@@ -1,21 +1,17 @@
 <div class="parent">
-  <!-- <app-header></app-header> -->
-
   <!-- Hero Section -->
-  <section id="home"
+  <section
+    id="home"
     class="hero-section d-flex flex-column align-items-center justify-content-center text-center text-white"
   >
-    <!-- Avatar -->
-    <!-- https://lottie.host/61fefe9f-04ab-4c7f-91a1-d9d39da4b6ea/EXu9UeGC8w.lottie -->
-    
     <dotlottie-wc
+      #lottieEl
       class="rounded-circle mb-3"
       src="/assets/img/livelogo.lottie"
       speed="1"
       autoplay
       loop
     ></dotlottie-wc>
-
     <!-- Glowing Dot (inside your badge or alone) -->
     <div class="availability-badge">
       <div class="glow-wrapper">
@@ -29,27 +25,10 @@
     <h1 class="display-4 fw-bold Title">
       Welcome to<br /><span class="text-gradient">my digital humble abode</span>
     </h1>
-    <p
-      style="
-        --font-selector: R0Y7TWFucm9wZS02MDA;
-        --framer-font-family: 'Manrope', sans-serif;
-        --framer-font-size: 14px;
-        --framer-font-weight: 600;
-        --framer-line-height: 24px;
-        --framer-text-alignment: center;
-        --framer-text-color: rgba(255, 255, 255, 0.4);
-        font-family: 'Manrope', sans-serif;
-        font-size: 15px;
-        font-weight: 600;
-        line-height: 24px;
-        color: rgba(255, 255, 255, 0.4);
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 1.5rem;
-      "
-    >
+    <p class="description-text">
       I’m a Full stack .NET developer.<br />
-      My interest lies in Angular, .NET Core Web API, ASP.NET MVC, and clean architecture.
+      My interest lies in Angular, .NET Core Web API, ASP.NET MVC, and clean
+      architecture.
     </p>
 
     <!-- Buttons -->
@@ -66,16 +45,10 @@
       </a>
     </div>
   </section>
+
   <app-logo-carousel></app-logo-carousel>
-
-  <!-- <app-stacked-cards></app-stacked-cards> -->
-
   <section id="work"><app-work></app-work></section>
   <section id="aboutme"><app-aboutme></app-aboutme></section>
   <section id="faq"><app-faq></app-faq></section>
-  
-  
   <app-footer></app-footer>
- 
-  
 </div>

@@ -1,7 +1,10 @@
-<div class="side-cards-container">
+<div #cardsContainer class="side-cards-container" 
+     (touchstart)="onTouchStart($event)"
+     (touchmove)="onTouchMove($event)"
+     (touchend)="onTouchEnd()">
   <div
     class="card"
-    *ngFor="let card of cards; let i = index"
+    *ngFor="let card of isMobile ? clonedCards : cards; let i = index"
     [style.transform]="getCardTransform(i)"
     [style.zIndex]="hoveredIndex === i ? 99 : i + 10"
     [class.hovered]="hoveredIndex === i"
@@ -11,7 +14,7 @@
     (mouseleave)="hoveredIndex = null"
   >
     <div class="card-content">
-      <img *ngIf="card.image" [src]="card.image" alt="card image" />
+      <img *ngIf="card.image" [src]="card.image" alt="card image" loading="lazy" />
     </div>
   </div>
 </div>

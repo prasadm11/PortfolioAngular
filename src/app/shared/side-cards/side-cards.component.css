@@ -50,3 +50,39 @@
   pointer-events: none;
   display: block;
 }
+
+/* Mobile Carousel Styles */
+@media (max-width: 768px) {
+  .side-cards-container {
+    padding-top: 0;
+    height: 320px;
+    padding-right: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    scroll-behavior: smooth;
+  }
+
+  .side-cards-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .card {
+    position: relative;
+    flex: 0 0 auto;
+    width: 200px;
+    height: 270px;
+    margin: 0 15px;
+    scroll-snap-align: center;
+    transform: none !important;
+  }
+
+  .card:first-child {
+    margin-left: 20px;
+  }
+
+  .card:last-child {
+    margin-right: 20px;
+  }
+}

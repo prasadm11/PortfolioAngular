@@ -39,3 +39,57 @@
   background-color: #ffffff;
   color: #0f172a !important;
 }
+
+/* Hamburger icon */
+.hamburger {
+  width: 24px;
+  height: 18px;
+  position: relative;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger span:nth-child(1) { top: 0; }
+.hamburger span:nth-child(2) { top: 7px; }
+.hamburger span:nth-child(3) { top: 14px; }
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 7px;
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 7px;
+}
+
+/* Mobile menu animation */
+.mobile-links {
+  align-self: center;
+  max-height: 0;
+  overflow: hidden;
+  /* transition: max-height 0.3s ease-in-out; */
+  transition: all 0.3s ease-in-out;
+}
+
+.mobile-links.open {
+  max-height: 500px; /* enough space for links */
+}
+@media (max-width: 767.98px) {
+  .custom-nav {
+    border-radius: 20px !important;
+  }
+  
+}

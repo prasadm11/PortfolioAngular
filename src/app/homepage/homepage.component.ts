@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AfterViewInit, Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FaqComponent } from '../faq/faq.component';
 import { LogoCarouselComponent } from "../logo-carousel/logo-carousel.component";
 import { FooterComponent } from "../shared/footer/footer.component";
@@ -13,9 +13,8 @@ import { AboutmeComponent } from "../aboutme/aboutme.component";
   styleUrl: './homepage.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class HomepageComponent {
+export class HomepageComponent{
   
-
   carouselImages: string[] = [
   'https://via.placeholder.com/800x400?text=Slide+1',
   'https://via.placeholder.com/800x400?text=Slide+2',

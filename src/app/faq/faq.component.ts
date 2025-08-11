@@ -1,6 +1,10 @@
 import { Component ,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+interface Faq {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+}
 @Component({
   selector: 'app-faq',
   imports: [CommonModule],
@@ -8,18 +12,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './faq.component.css'
 })
 
-export class FaqComponent {
-  
-  faqs = [
+export class FaqComponent implements OnInit{
+  emailSubject = "Let's talk about a project";
+emailBody = "Hi Prasad,\n\nI'd like to discuss...";
+get mailToLink(): string {
+  return `mailto:pmmahajan2002@gmail.com?subject=${encodeURIComponent(this.emailSubject)}&body=${encodeURIComponent(this.emailBody)}`;
+}
+  readonly faqs: Faq[] = [
     {
       question: 'Are you available to hire full time?',
       answer: `At the moment, I’m pretty happy where I am. Currently I am not looking for any full-time opportunities, but I’m open to interesting collaborations or freelance gigs.`,
       isOpen: false,
-    },
-    {
-      question: 'How do your quote pricing works and when can we get on call?',
-      answer: `Pricing depends on the scope. I usually start with a call to understand your needs, then provide a custom estimate based on time and complexity.`,
-      isOpen: false
     },
     {
       question: 'Can you facelift my design?',
@@ -37,23 +40,25 @@ export class FaqComponent {
       isOpen: false
     },
     {
-      question: 'Do you follow any specific architecture or design pattern?',
-      answer: `Yes, I follow clean architecture principles especially in full-stack apps. My recent projects include well-structured layers for better scalability, maintainability, and testing.`,
-      isOpen: false
-    },
-    {
       question: 'Are you open to freelance or contract work?',
       answer: `Yes, I’m open to freelance or part-time projects that align with my skill set and schedule. Feel free to reach out with your project details.`,
       isOpen: false
     }
   ];
   ngOnInit(): void {
-    // Set all isOpen values to false on component init
-    this.faqs.forEach(faq => faq.isOpen = false);
+    this.closeAllFaqs();
   }
 
-  toggleFAQ(faq: any) {
-    faq.isOpen = !faq.isOpen;
+  toggleFAQ(index: number) {
+    this.faqs.forEach((faq, i) => {
+      faq.isOpen = i === index ? !faq.isOpen : false; 
+    });
+  }
+  trackByFaq(index: number, faq: Faq) {
+    return faq.question; 
+  }
+  private closeAllFaqs() {
+    this.faqs.forEach(faq => (faq.isOpen = false));
   }
 
 }

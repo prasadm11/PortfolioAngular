@@ -70,3 +70,44 @@ h5.text-success {
   color: rgb(21, 30, 40); /* Matches Framer's text color */
   margin-bottom: 10px;
 }
+
+
+@media (max-width: 1024px) {
+  .experience-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .experience-item > div {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  .experience-description {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .collaborators {
+    justify-content: center;
+  }
+
+  .cta-box {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 2rem 1rem;
+  }
+
+  .cta-box .content1,
+  .cta-box .content2 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .cta-button {
+    justify-content: center;
+  }
+  .experience-item.nomargin {
+    margin-bottom: 0 !important;
+  }
+}

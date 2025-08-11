@@ -1,14 +1,14 @@
 <div class="portfolio-container">
   <div class="dashboard-grid">
-    <!-- Section: About -->
-    <section>
-      <header>
-        <h3>BEYOND PORTFOLIO</h3>
+    <!-- Current Read -->
+    <div>
+      <div>
+        <h3 class="gradient-text">BEYOND PORTFOLIO</h3>
         <h1>Let's know more about me</h1>
-      </header>
-      <article class="card current-read" aria-labelledby="current-read-heading">
-        <h4 id="current-read-heading">Current Read</h4>
-        <p>The Psychology of Money ・ Morgan Housel</p>
+      </div>
+      <div class="card current-read">
+        <h4>Current Read</h4>
+        <p style="color:  rgba(255, 255, 255, 0.5);">The Psychology of Money ・ Morgan Housel</p>
         <img
           src="https://bookpadho.com/wp-content/uploads/2025/02/1740040199.png"
           alt="Cover of the book 'The Psychology of Money' by Morgan Housel"
@@ -23,8 +23,9 @@
         <p>
           Designed key features for embedding in-platform data widgets, charts,
         </p>
-        <div class="logos-carousel" role="region" aria-label="Scrolling list of tech logos">
-          <div class="logos-track">
+        <div class="logos-carousel">
+          <div class="logos-track" style="margin-bottom: 1px;">
+            <!-- Original set -->
             <ng-container *ngFor="let logo of logos">
               <img [src]="logo" alt="Tech logo" />
             </ng-container>
@@ -45,31 +46,32 @@
         ></dotlottie-wc>
       </div>
 
-      <article class="card admired-designers">
-        <h4>Some designers I admire <span role="img" aria-label="smiling face with hearts">😍</span></h4>
+      <!-- Admired Designers -->
+      <div class="card admired-designers">
+        <h4>Some programmers I admire <span>😍</span></h4>
         <div class="avatar-row">
-          <div class="avatar" data-name="Designer 1">
+          <div class="avatar" data-name="Linus Torvalds">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/3135/3135715.png"
-              alt="Designer 1 avatar"
+              src="https://cdn.britannica.com/99/124299-050-4B4D509F/Linus-Torvalds-2012.jpg?w=400&h=300&c=crop"
+              alt="Linus Torvalds"
             />
           </div>
-          <div class="avatar" data-name="Designer 2">
+          <div class="avatar" data-name="Dennis Ritchie">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/3641/3641437.png"
-              alt="Designer 2 avatar"
+              src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQf11rdy4QgYm8S2RFeLk3WlNsBZkwj7S9CAwbTCp4GV5IZ1_KQ9zHJI3yUU5UCaDpiRu-2pa3eqZTxPAD-5AS3dA"
+              alt="Dennis Ritchie"
             />
           </div>
-          <div class="avatar" data-name="Designer 3">
+          <div class="avatar" data-name="Anurag Acharya">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/149/149071.png"
-              alt="Designer 3 avatar"
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYcZd2bsOJ3IadT4A4WKCAvdYoZOnnW_XrkEWEQnh1wZZsfXvnauX3cUF68EVr94MiahF_ZJHI126UFsC5ol0yZA"
+              alt="Anurag Acharya"
             />
           </div>
-          <div class="avatar" data-name="Designer 4">
+          <div class="avatar" data-name="Rushabh Mehta">
             <img
-              src="https://cdn-icons-png.flaticon.com/128/3177/3177440.png"
-              alt="Designer 4 avatar"
+              src="https://miro.medium.com/v2/resize:fill:176:176/1*8PdQjAS3TF0cpO0iys6Gpg.jpeg"
+              alt="Rushabh Mehta"
             />
           </div>
         </div>

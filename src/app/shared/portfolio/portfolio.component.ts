@@ -86,7 +86,8 @@ export class PortfolioComponent implements OnInit {
   logos: string[] = [
     'https://www.svgrepo.com/show/354987/figma.svg',
     'https://www.svgrepo.com/show/331642/webflow.svg',
-    'https://www.svgrepo.com/show/306484/notion.svg',
+    // 'https://www.svgrepo.com/show/306484/notion.svg',
+    'https://logo.clearbit.com/miro.com?size=500'
   ];
 
   tags = [

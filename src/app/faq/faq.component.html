@@ -12,10 +12,7 @@
       <!-- Left CTA Card -->
       <div class="col-md-1"></div>
       <div class="col-md-4 mb-5 position-relative">
-        <!-- Decorative Circles (Fake Ellipses) -->
         <div class="ellipse ellipse1"></div>
-        <!-- <div class="ellipse ellipse2"></div> -->
-        <!-- <div class="ellipse ellipse3"></div> -->
         <div class="ellipse ellipse4"></div>
 
         <div
@@ -35,7 +32,7 @@
             <div class="overlay-content p-3 text-white text-center">
               <a
                 class="btn btn-contact"
-                href="https://personalfolio.lemonsqueezy.com/checkout/buy/0ce0ffe4-2dda-4cb3-aed8-53e4ca49c14c"
+                [href]="mailToLink"
                 target="_blank"
                 rel="noopener"
               >
@@ -48,32 +45,13 @@
           </div>
         </div>
       </div>
-
-      <!-- Right FAQ Accordion -->
-      <!-- <div class="col-md-6">
-        <div
-          *ngFor="let faq of faqs"
-          class="mb-3 border rounded p-3 bg-body text-dark"
-        >
-          <div
-            class="d-flex justify-content-between align-items-center cursor-pointer"
-            (click)="toggleFAQ(faq)"
-          >
-            <strong>{{ faq.question }}</strong>
-            <span>{{ faq.isOpen ? "▲" : "▼" }}</span>
-          </div>
-          <div *ngIf="faq.isOpen" class="faq-answer mt-2 px-2 text-muted">
-            {{ faq.answer }}
-          </div>
-        </div>
-      </div> -->
       <!-- Right FAQ Accordion -->
       <div class="col-md-6">
         <div
-          *ngFor="let faq of faqs"
+          *ngFor="let faq of faqs; let i = index; trackBy: trackByFaq"
           class="faq-item p-3 mb-3 rounded-4 border faq-card-custom"
           [class.open]="faq.isOpen"
-          (click)="toggleFAQ(faq)"
+          (click)="toggleFAQ(i)"
         >
           <div
             class="faq-header d-flex justify-content-between align-items-center"

@@ -1,4 +1,12 @@
 
+using Microsoft.EntityFrameworkCore;
+using PortfolioManamagement.API.Context;
+using PortfolioManamagement.API.Repositories.Implementation;
+using PortfolioManamagement.API.Repositories.Interface;
+using PortfolioManamagement.API.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 namespace PortfolioManamagement.API
 {
   public class Program
@@ -10,21 +18,68 @@ namespace PortfolioManamagement.API
       // Add services to the container.
 
       builder.Services.AddControllers();
-      // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-      builder.Services.AddOpenApi();
+
+      // Add Swagger services
+      builder.Services.AddEndpointsApiExplorer();
+      builder.Services.AddSwaggerGen();
+
+      // ✅ Add CORS (allow all)
+      builder.Services.AddCors(options =>
+      {
+        options.AddPolicy("AllowAll", policy =>
+        {
+          policy.AllowAnyOrigin()
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+        });
+      });
+
+      builder.Services.AddDbContext<AppDBContext>(options =>
+          options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+      // JWT Configuration
+      var jwtSettings = builder.Configuration.GetSection("Jwt");
+      builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+          .AddJwtBearer(options =>
+          {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+              ValidateIssuer = true,
+              ValidateAudience = true,
+              ValidateLifetime = true,
+              ValidateIssuerSigningKey = true,
+              ValidIssuer = jwtSettings["Issuer"],
+              ValidAudience = jwtSettings["Audience"],
+              IssuerSigningKey = new SymmetricSecurityKey(
+              Encoding.UTF8.GetBytes(jwtSettings["Key"]))
+            };
+          });
+
+      // service registration for repositories and services
+      builder.Services.AddScoped<UserService>();
+      builder.Services.AddScoped<IUserRepository,UserRepository>();
+
 
       var app = builder.Build();
 
       // Configure the HTTP request pipeline.
       if (app.Environment.IsDevelopment())
       {
-        app.MapOpenApi();
+        app.UseSwagger();
+        app.UseSwaggerUI(c =>
+        {
+          c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio Management API v1");
+          c.RoutePrefix = string.Empty; // Serve Swagger UI at root "/"
+        });
       }
 
       app.UseHttpsRedirection();
 
-      app.UseAuthorization();
+      app.UseCors("AllowAll");
 
+      app.UseAuthentication();
+
+      app.UseAuthorization();
 
       app.MapControllers();
 

@@ -1,0 +1,40 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.btn-social {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.btn-social:hover {
+  background-color: #fff;
+  color: #000 !important;
+  transform: scale(1.1);
+}
+
+.form-control:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 0 0.2rem rgba(106, 17, 203, 0.25);
+}
+.left-side{
+    background-color: black;
+}

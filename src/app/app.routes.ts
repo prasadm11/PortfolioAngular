@@ -2,7 +2,7 @@ import { Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LogoCarouselComponent } from './logo-carousel/logo-carousel.component';
 import { AboutComponent } from './about/about.component';
-
+import { LoginComponent } from './portfolioManagement/auth/login/login.component';
 export const routes: Routes = [
   {
     path: '',
@@ -15,6 +15,10 @@ export const routes: Routes = [
   {
     path:'about',
     component:AboutComponent,
+  },
+  {
+    path:'login',
+    component:LoginComponent
   }
   
 ];

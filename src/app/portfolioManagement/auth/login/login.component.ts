@@ -1,23 +1,48 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';  
-// import { MdbButtonsModule } from 'mdb-angular-ui-kit/buttons'; 
-
+// import { AuthService } from '../../services/auth.service';
+import { AuthService } from '../../../Services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: "app-login",
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, HttpClientModule, MdbFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, MdbFormsModule],
   templateUrl: "./login.component.html",
-  styleUrl: "./login.component.css",
+  styleUrls: ["./login.component.css"],
 })
 export class LoginComponent {
-  email = "";
-  password = "";
+  loginForm: FormGroup;
+  errorMessage = '';
+
+  constructor(
+    private fb: FormBuilder,
+    private authService: AuthService,
+    private router: Router
+  ) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', Validators.required]
+    });
+  }
 
   onLogin() {
-    console.log("Email:", this.email, "Password:", this.password);
+    if (this.loginForm.valid) {
+      const credentials = this.loginForm.value;
+      this.authService.login(credentials).subscribe({
+        next: (res) => {
+          console.log("✅ Login successful:", res);
+          this.router.navigate(['/admindashboard']); // redirect on success
+        },
+        error: (err) => {
+          console.error("❌ Login failed:", err);
+          this.errorMessage = 'Invalid email or password';
+        }
+      });
+    } else {
+      this.errorMessage = 'Please enter valid credentials';
+    }
   }
 }

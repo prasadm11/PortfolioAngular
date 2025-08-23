@@ -4,6 +4,7 @@ import { LogoCarouselComponent } from './logo-carousel/logo-carousel.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './portfolioManagement/auth/login/login.component';
 import { AdmindashboardComponent } from './portfolioManagement/admindashboard/admindashboard.component';
+
 export const routes: Routes = [
   {
     path: '',

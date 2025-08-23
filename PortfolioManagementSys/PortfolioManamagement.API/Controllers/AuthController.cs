@@ -26,10 +26,10 @@ namespace PortfolioManamagement.API.Controllers
     public IActionResult Login([FromBody] LoginModel login)
     {
       var user = _context.Users.FirstOrDefault(u =>
-          u.UserName == login.UserName && u.Password == login.Password);
+          u.Email == login.Email && u.Password == login.Password);
 
       if (user == null)
-        return Unauthorized("Invalid username or password");
+        return Unauthorized("Invalid email or password");
 
       var tokenHandler = new JwtSecurityTokenHandler();
       var key = Encoding.UTF8.GetBytes(_configuration["Jwt:Key"]);

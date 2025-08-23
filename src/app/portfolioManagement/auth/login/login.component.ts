@@ -34,6 +34,9 @@ export class LoginComponent {
       this.authService.login(credentials).subscribe({
         next: (res) => {
           console.log("✅ Login successful:", res);
+          // ✅ Save token & expiration
+        localStorage.setItem('authToken', res.token);
+        localStorage.setItem('tokenExpiry', res.expiration);
           this.router.navigate(['/admindashboard']); // redirect on success
         },
         error: (err) => {

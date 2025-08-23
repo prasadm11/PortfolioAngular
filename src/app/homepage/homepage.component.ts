@@ -4,11 +4,12 @@ import { LogoCarouselComponent } from "../logo-carousel/logo-carousel.component"
 import { FooterComponent } from "../shared/footer/footer.component";
 import { WorkComponent } from "../work/work.component";
 import { AboutmeComponent } from "../aboutme/aboutme.component";
+import { HeaderComponent } from '../shared/header/header.component';
 
 
 @Component({
   selector: 'app-homepage',
-  imports: [LogoCarouselComponent, FooterComponent, WorkComponent, AboutmeComponent,FaqComponent],
+  imports: [LogoCarouselComponent, FooterComponent, WorkComponent, AboutmeComponent,FaqComponent,HeaderComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

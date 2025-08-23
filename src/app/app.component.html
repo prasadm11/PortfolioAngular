@@ -1,13 +1,1 @@
-<div>
-  @if (url.includes('login')) {
-    <!-- Only login page -->
-    <router-outlet></router-outlet>
-  } @else {
-    <!-- Normal layout -->
-     <div class="parent">
-       <app-header></app-header>
-       <router-outlet></router-outlet>
-
-     </div>
-  }
-</div>
+<router-outlet></router-outlet>

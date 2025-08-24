@@ -8,5 +8,8 @@ namespace PortfolioManamagement.API.Context
 
     //DBsets (tables)
     public DbSet<User> Users { get; set; }
+
+    public DbSet<Contact> Contacts { get; set; }
+
   }
 }

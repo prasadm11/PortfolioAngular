@@ -27,10 +27,6 @@ export const routes: Routes = [
     path:'admindashboard',
     component : AdmindashboardComponent,
     canActivate: [AuthGuard]
-  },
-  {
-    path:'contactdialog',
-    component:ContactdialogComponent
   }
   
 ];

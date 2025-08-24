@@ -1,12 +1,13 @@
 
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using PortfolioManamagement.API.Context;
 using PortfolioManamagement.API.Repositories.Implementation;
 using PortfolioManamagement.API.Repositories.Interface;
 using PortfolioManamagement.API.Services;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
-using System.Text;
 namespace PortfolioManamagement.API
 {
   public class Program
@@ -21,7 +22,40 @@ namespace PortfolioManamagement.API
 
       // Add Swagger services
       builder.Services.AddEndpointsApiExplorer();
-      builder.Services.AddSwaggerGen();
+      builder.Services.AddSwaggerGen(c =>
+      {
+        c.SwaggerDoc("v1", new OpenApiInfo
+        {
+          Title = "Portfolio Management API",
+          Version = "v1"
+        });
+
+        // ✅ Add JWT Authentication to Swagger
+        c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+        {
+          Name = "Authorization",
+          Type = SecuritySchemeType.ApiKey,
+          Scheme = "Bearer",
+          BearerFormat = "JWT",
+          In = ParameterLocation.Header,
+          Description = "Enter 'Bearer' [space] and then your valid JWT token.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6...\""
+        });
+
+        c.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            new string[] {}
+        }
+    });
+      });
 
       // ✅ Add CORS (allow all)
       builder.Services.AddCors(options =>
@@ -58,6 +92,9 @@ namespace PortfolioManamagement.API
       // service registration for repositories and services
       builder.Services.AddScoped<UserService>();
       builder.Services.AddScoped<IUserRepository,UserRepository>();
+
+      builder.Services.AddScoped<ContactService>();
+      builder.Services.AddScoped<IContactRepository,ContactRepository>();
 
 
       var app = builder.Build();

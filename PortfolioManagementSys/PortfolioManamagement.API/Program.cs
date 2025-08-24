@@ -96,6 +96,9 @@ namespace PortfolioManamagement.API
       builder.Services.AddScoped<ContactService>();
       builder.Services.AddScoped<IContactRepository,ContactRepository>();
 
+      //email service
+      builder.Services.AddScoped<IEmailService, EmailService>();
+
 
       var app = builder.Build();
 

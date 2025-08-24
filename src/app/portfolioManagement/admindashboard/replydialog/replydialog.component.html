@@ -1,0 +1,19 @@
+<!-- reply-dialog.component.html -->
+<h2 mat-dialog-title>Reply to {{ data.email }}</h2>
+
+<mat-dialog-content>
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>Subject</mat-label>
+    <input matInput [(ngModel)]="subject" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" style="width: 100%">
+    <mat-label>Message</mat-label>
+    <textarea matInput rows="5" [(ngModel)]="body"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="close()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="sendEmail()">Send</button>
+</mat-dialog-actions>

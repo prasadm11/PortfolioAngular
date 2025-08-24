@@ -4,6 +4,10 @@ import { log } from 'console';
 import { NgFor, NgIf } from '@angular/common';
 import { Router } from '@angular/router';
 import { DatePipe } from '@angular/common';
+import { EmailService , EmailRequest} from '../../Services/email/email.service';
+import { MatDialog } from '@angular/material/dialog';
+// import { ReplyDialogComponent } from '../reply-dialog/reply-dialog.component'; 
+import { ReplydialogComponent } from './replydialog/replydialog.component';
 @Component({
   selector: 'app-admindashboard',
   imports: [NgIf,NgFor,DatePipe],
@@ -13,7 +17,8 @@ import { DatePipe } from '@angular/common';
 export class AdmindashboardComponent implements OnInit{
   contacts: Contact[] = [];
   loading = true;
-  constructor(private contactService: ContactService,private router: Router  ) {}
+  constructor(private contactService: ContactService,private router: Router,private emailService : EmailService ,
+  private dialog: MatDialog ) {}
    ngOnInit(): void {
     this.contactService.getAll().subscribe({
       next: (res) => {
@@ -32,15 +37,17 @@ export class AdmindashboardComponent implements OnInit{
   // optionally open a MatDialog with full message
 }
 
+
 deleteContact(id: number) {
   console.log("Deleting contact ID:", id);
   // call service.delete(id).subscribe(...)
 }
 
 replyContact(email: string) {
-  console.log("Reply to:", email);
-  // you can open mail client:
-  window.location.href = `mailto:${email}`;
+  this.dialog.open(ReplydialogComponent, {
+    width: '500px',
+    data: { email }
+  });
 }
 logout() {
   localStorage.removeItem('authToken'); // clear token

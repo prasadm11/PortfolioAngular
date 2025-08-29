@@ -1,0 +1,26 @@
+.dashboard {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .contacts-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+
+    th {
+      background: #f4f4f4;
+    }
+
+    tr:hover {
+      background: #f9f9f9;
+    }
+  }
+}

@@ -3,8 +3,6 @@
     <h5 class="text-success text-uppercase mb-2">My Experiences</h5>
     <h2 class="fw-bold mb-5">Where I’ve Been Employed</h2>
 
-    <!-- Experience List -->
-    <!-- <div class="d-flex experience-item mb-5" *ngFor="let job of experiences"> -->
       <div class="d-flex flex-wrap experience-item mb-5 nomargin" *ngFor="let job of experiences">
 
       <div class="col-md-2"></div>
@@ -51,9 +49,7 @@
       
       <div class="content2">
         <a
-          href="https://personalfolio.lemonsqueezy.com/checkout/buy/0ce0ffe4-2dda-4cb3-aed8-53e4ca49c14c"
-          target="_blank"
-          rel="noopener"
+          (click)="openContactForm()"
           class="cta-button d-inline-flex align-items-center gap-2"
         >
           Contact Me

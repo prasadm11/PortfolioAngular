@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatDialog } from '@angular/material/dialog';
+import { ContactdialogComponent } from '../contactdialog/contactdialog.component';
 @Component({
   selector: 'app-experience',
   imports: [CommonModule],
@@ -7,6 +9,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './experience.component.css'
 })
 export class ExperienceComponent {
+  constructor(private dialog: MatDialog) {}
   experiences = [
     {
       role: 'Software Developer',
@@ -39,5 +42,15 @@ export class ExperienceComponent {
     //     'Focused on visual design and platform elements to improve data-driven interactions for users.',
     // },
   ];
+  openContactForm() {
+  this.dialog.open(ContactdialogComponent, {
+    width: '500px',
+    maxWidth: '90vw',
+    panelClass: 'custom-dialog-container',
+    disableClose: true,
+    autoFocus: true
+  });
+}
+
 
 }

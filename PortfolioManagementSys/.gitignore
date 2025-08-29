@@ -1,0 +1,69 @@
+## .NET Core / .NET projects ##
+bin/
+obj/
+out/
+TestResults/
+
+# User-specific files
+*.user
+*.userosscache
+*.suo
+*.sln.docstates
+*.vs/
+
+# Rider IDE
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Build results
+*.dll
+*.exe
+*.app
+*.log
+
+# Others
+*.nupkg
+*.snupkg
+*.cache
+*.dbmdl
+*.pdb
+*.mdb
+
+# NuGet
+*.nupkg
+*.nuspec
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Entity Framework Migrations
+Migrations/
+
+# Publish directory
+publish/
+
+# Coverage reports
+coverage/
+*.lcov
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.pid.lock
+
+# dotenv files (optional)
+.env
+.env.*
+
+# User secrets
+secrets.json
+
+# Local Azure Functions
+.local.settings.json

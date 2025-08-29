@@ -1,0 +1,35 @@
+<div class="overlay" (click)="close()"></div>
+
+<div class="contact-popup">
+  <h3>Get in Touch</h3>
+
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <!-- Name -->
+    <div class="form-group">
+      <i class="fas fa-user"></i>
+      <input type="text" formControlName="name" placeholder="Your Name" />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+      <i class="fas fa-envelope"></i>
+      <input type="email" formControlName="email" placeholder="Your Email" />
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+      <i class="fas fa-comment"></i>
+      <textarea formControlName="message" placeholder="Your Message" rows="4"></textarea>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-container">
+      <button type="button" class="btn cancel-btn" (click)="close()">
+        <i class="fas fa-times"></i> Cancel
+      </button>
+      <button type="submit" class="btn submit-btn" [disabled]="!contactForm.valid">
+        <i class="fas fa-paper-plane"></i> Send
+      </button>
+    </div>
+  </form>
+</div>

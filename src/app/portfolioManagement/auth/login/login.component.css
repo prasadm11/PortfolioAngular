@@ -1,0 +1,135 @@
+/* Background with animated gradient */
+.login-bg {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff4e50, #f9d423);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Card glass effect */
+.login-card {
+  width: 90%;
+  max-width: 950px;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: fadeInUp 1.2s ease;
+}
+
+/* Left Side */
+.login-left {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+/* Right Side */
+.login-right {
+  flex: 1;
+  background: rgba(0, 0, 0, 0.6);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Inputs with glass effect */
+.glass-input {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border: none !important;
+  color: white;
+}
+.glass-input:focus {
+  box-shadow: 0 0 10px #6a11cb;
+  background: rgba(255, 255, 255, 0.25) !important;
+  outline: none;
+}
+
+/* Neon button */
+.btn-neon {
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 20px rgba(106, 17, 203, 0.6);
+  transition: all 0.3s ease;
+}
+.btn-neon:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(106, 17, 203, 1);
+}
+
+/* Social buttons */
+.btn-social {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 50%;
+  width: 55px;
+  height: 55px;
+  color: #fff;
+  transition: 0.3s;
+}
+.btn-social:hover {
+  background: #fff;
+  color: #000;
+  transform: scale(1.1);
+}
+
+/* Neon link */
+.neon-link {
+  color: #6a11cb;
+  text-shadow: 0 0 10px rgba(106, 17, 203, 0.8);
+  transition: 0.3s;
+}
+.neon-link:hover {
+  color: #fff;
+  text-shadow: 0 0 20px #6a11cb;
+}
+
+/* ================= Animations ================= */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes floatLogo {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+/* Extra element animations */
+.animate-fadein {
+  animation: fadeInUp 1.2s ease forwards;
+}
+.animate-slideup {
+  animation: fadeInUp 1.5s ease forwards;
+}
+.animate-zoom {
+  animation: zoomIn 1.2s ease forwards;
+}
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+.error-box {
+  background: #ffe6e6;
+  color: #d9534f;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  animation: shake 0.4s ease;
+}

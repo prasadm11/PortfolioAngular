@@ -1,0 +1,36 @@
+<section class="dashboard">
+  <h2>📩 Contact Submissions</h2>
+  <button class="logout-btn" (click)="logout()">🚪 Logout</button>
+  <div *ngIf="loading">Loading...</div>
+
+  <table *ngIf="!loading && contacts.length > 0" class="contacts-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Message</th>
+        <th>Created On</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts">
+        <td>{{ contact.id }}</td>
+        <td>{{ contact.name }}</td>
+        <td>{{ contact.email }}</td>
+        <td>{{ contact.message }}</td>
+        <td>{{ contact.createdOn | date:'short' }}</td>
+        <td>
+          <button (click)="viewContact(contact)">👁️ View</button>
+          <button (click)="deleteContact(contact.id!)">🗑️ Delete</button>
+          <button (click)="replyContact(contact.email)">✉️ Reply</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="!loading && contacts.length === 0">
+    No contact messages yet.
+  </div>
+</section>

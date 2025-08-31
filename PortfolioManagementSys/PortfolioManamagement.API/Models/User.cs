@@ -1,11 +1,14 @@
 using System.ComponentModel.DataAnnotations;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 
 namespace PortfolioManamagement.API.Models
 {
   public class User
   {
-    [Key]
-    public int Id { get; set; }
+    [BsonId] // tells Mongo this is the document ID
+    [BsonRepresentation(BsonType.ObjectId)] // stores as ObjectId in DB but lets you use string in C#
+    public string Id { get; set; }
 
     [Required]
     public string FullName { get; set; }

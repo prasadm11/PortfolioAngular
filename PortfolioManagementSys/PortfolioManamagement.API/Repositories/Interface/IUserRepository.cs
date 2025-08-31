@@ -6,8 +6,8 @@ namespace PortfolioManamagement.API.Repositories.Interface
   {
     Task<User> AddUserAsync(User user);
     Task<IEnumerable<User>> GetAllUsersAsync();
-    Task<User?> GetUserByIdAsync(int id);
+    Task<User?> GetUserByIdAsync(string id);
     Task<User?> UpdateUserAsync(User user);
-    Task<bool> DeleteUserAsync(int id);
+    Task<bool> DeleteUserAsync(string id);
   }
 }

@@ -17,7 +17,7 @@ namespace PortfolioManamagement.API.Services
       return await _contactRepository.GetAllAsync();
     }
 
-    public async Task<Contact?> GetByIdAsync(int id)
+    public async Task<Contact?> GetByIdAsync(string id)
     {
       return await _contactRepository.GetByIdAsync(id);
     }
@@ -32,7 +32,7 @@ namespace PortfolioManamagement.API.Services
       return await _contactRepository.UpdateAsync(contact);
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
       return await _contactRepository.DeleteAsync(id);
     }

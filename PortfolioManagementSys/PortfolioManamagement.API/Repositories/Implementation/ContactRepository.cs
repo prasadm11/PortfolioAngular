@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+using MongoDB.Driver;
 using PortfolioManamagement.API.Context;
 using PortfolioManamagement.API.Models;
 using PortfolioManamagement.API.Repositories.Interface;
@@ -7,45 +7,48 @@ namespace PortfolioManamagement.API.Repositories.Implementation
 {
   public class ContactRepository : IContactRepository
   {
-    private readonly AppDBContext _context;
+    private readonly MongoDbContext _context;
 
-    public ContactRepository(AppDBContext context)
+    public ContactRepository(MongoDbContext context)
     {
       _context = context;
     }
 
     public async Task<IEnumerable<Contact>> GetAllAsync()
     {
-      return await _context.Contacts.ToListAsync();
+      return await _context.Contacts.Find(_ => true).ToListAsync();
     }
 
-    public async Task<Contact?> GetByIdAsync(int id)
+    public async Task<Contact?> GetByIdAsync(string id)
     {
-      return await _context.Contacts.FindAsync(id);
+      return await _context.Contacts
+                           .Find(u => u.Id == id)
+                           .FirstOrDefaultAsync();
     }
 
     public async Task<Contact> AddAsync(Contact contact)
     {
-      _context.Contacts.Add(contact);
-      await _context.SaveChangesAsync();
-      return contact;
+      await _context.Contacts.InsertOneAsync(contact);
+      return contact; // return inserted doc
     }
 
     public async Task<Contact> UpdateAsync(Contact contact)
     {
-      _context.Contacts.Update(contact);
-      await _context.SaveChangesAsync();
+      var result = await _context.Contacts
+                                 .ReplaceOneAsync(u => u.Id == contact.Id, contact);
+
+      if (result.MatchedCount == 0)
+        throw new KeyNotFoundException("Contact not found.");
+
       return contact;
     }
 
-    public async Task<bool> DeleteAsync(int id)
+    public async Task<bool> DeleteAsync(string id)
     {
-      var contact = await _context.Contacts.FindAsync(id);
-      if (contact == null) return false;
+      var result = await _context.Contacts
+                                 .DeleteOneAsync(u => u.Id == id);
 
-      _context.Contacts.Remove(contact);
-      await _context.SaveChangesAsync();
-      return true;
+      return result.DeletedCount > 0;
     }
   }
 }

@@ -19,6 +19,11 @@ namespace PortfolioManamagement.API
       // Add services to the container.
 
       builder.Services.AddControllers();
+      builder.WebHost.ConfigureKestrel(options =>
+      {
+        options.ListenAnyIP(5000); // <-- match your docker -p mapping
+      });
+
 
       // Add Swagger services
       builder.Services.AddEndpointsApiExplorer();
@@ -67,9 +72,13 @@ namespace PortfolioManamagement.API
                 .AllowAnyMethod();
         });
       });
+      //temporarly not using as im following mongodb approach
+      //builder.Services.AddDbContext<AppDBContext>(options =>
+      //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-      builder.Services.AddDbContext<AppDBContext>(options =>
-          options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+      //mongodbservice registration
+      builder.Services.AddSingleton<MongoDbContext>();
+
 
       // JWT Configuration
       var jwtSettings = builder.Configuration.GetSection("Jwt");
@@ -103,15 +112,15 @@ namespace PortfolioManamagement.API
       var app = builder.Build();
 
       // Configure the HTTP request pipeline.
-      if (app.Environment.IsDevelopment())
-      {
+      //if (app.Environment.IsDevelopment())
+      //{
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
           c.SwaggerEndpoint("/swagger/v1/swagger.json", "Portfolio Management API v1");
           c.RoutePrefix = string.Empty; // Serve Swagger UI at root "/"
         });
-      }
+      //}
 
       app.UseHttpsRedirection();
 

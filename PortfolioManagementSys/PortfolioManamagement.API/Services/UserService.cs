@@ -16,10 +16,10 @@ namespace PortfolioManamagement.API.Services
 
     public Task<IEnumerable<User>> GetAllUsersAsync() => _userRepository.GetAllUsersAsync();
 
-    public Task<User?> GetUserByIdAsync(int id) => _userRepository.GetUserByIdAsync(id);
+    public Task<User?> GetUserByIdAsync(string id) => _userRepository.GetUserByIdAsync(id);
 
     public Task<User?> UpdateUserAsync(User user) => _userRepository.UpdateUserAsync(user);
 
-    public Task<bool> DeleteUserAsync(int id) => _userRepository.DeleteUserAsync(id);
+    public Task<bool> DeleteUserAsync(string id) => _userRepository.DeleteUserAsync(id);
   }
 }

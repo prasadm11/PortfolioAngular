@@ -29,7 +29,7 @@ namespace PortfolioManamagement.API.Controllers
     // GET: api/contact/{id}
     [HttpGet("{id}")]
     [Authorize]
-    public async Task<IActionResult> GetById(int id)
+    public async Task<IActionResult> GetById(string id)
     {
       var contact = await _contactService.GetByIdAsync(id);
       if (contact == null) return NotFound();
@@ -49,7 +49,7 @@ namespace PortfolioManamagement.API.Controllers
     // PUT: api/contact/{id}
     [HttpPut("{id}")]
     [Authorize]
-    public async Task<IActionResult> Update(int id, [FromBody] Contact contact)
+    public async Task<IActionResult> Update(string id, [FromBody] Contact contact)
     {
       if (id != contact.Id) return BadRequest("ID mismatch.");
 
@@ -62,7 +62,7 @@ namespace PortfolioManamagement.API.Controllers
     // DELETE: api/contact/{id}
     [HttpDelete("{id}")]
     [Authorize]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete(string id)
     {
       var deleted = await _contactService.DeleteAsync(id);
       if (!deleted) return NotFound();

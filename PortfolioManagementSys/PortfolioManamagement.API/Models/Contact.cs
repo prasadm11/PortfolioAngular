@@ -1,11 +1,13 @@
 using System.ComponentModel.DataAnnotations;
-
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 namespace PortfolioManamagement.API.Models
 {
   public class Contact
   {
-    [Key]
-    public int Id { get; set; }
+    [BsonId] // tells Mongo this is the document ID
+    [BsonRepresentation(BsonType.ObjectId)]
+    public string Id { get; set; }
 
     [Required]
     [MaxLength(150)]

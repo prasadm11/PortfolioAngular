@@ -28,7 +28,7 @@ namespace PortfolioManamagement.API.Controllers
 
     // GET: api/User/5
     [HttpGet("{id}")]
-    public async Task<IActionResult> GetUserById(int id)
+    public async Task<IActionResult> GetUserById(string id)
     {
       var user = await _userService.GetUserByIdAsync(id);
       if (user == null) return NotFound();
@@ -47,7 +47,7 @@ namespace PortfolioManamagement.API.Controllers
 
     // PUT: api/User/5
     [HttpPut("{id}")]
-    public async Task<IActionResult> UpdateUser(int id, [FromBody] User user)
+    public async Task<IActionResult> UpdateUser(string id, [FromBody] User user)
     {
       if (id != user.Id) return BadRequest("ID mismatch");
 
@@ -59,7 +59,7 @@ namespace PortfolioManamagement.API.Controllers
 
     // DELETE: api/User/5
     [HttpDelete("{id}")]
-    public async Task<IActionResult> DeleteUser(int id)
+    public async Task<IActionResult> DeleteUser(string id)
     {
       var result = await _userService.DeleteUserAsync(id);
       if (!result) return NotFound();

@@ -14,7 +14,9 @@ export interface Contact {
   providedIn: 'root'
 })
 export class ContactService {
-  private apiUrl = 'https://localhost:7211/api/Contact';
+  // private apiUrl = 'https://localhost:7211/api/Contact';
+
+  private apiUrl = 'https://portfoliomanagementsys-3.onrender.com/api/Contact';
 
   constructor(private http: HttpClient) {}
 

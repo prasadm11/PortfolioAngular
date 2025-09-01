@@ -13,7 +13,10 @@ export interface EmailRequest {
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'https://localhost:7211/api/Email/send'; // backend API
+  // private apiUrl = 'https://localhost:7211/api/Email/send'; // backend API
+
+    private apiUrl = 'https://portfoliomanagementsys-3.onrender.com/api/Email/send'; // backend API
+
 
   constructor(private http: HttpClient) {}
 

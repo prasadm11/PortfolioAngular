@@ -8,8 +8,8 @@ import { Observable, tap } from 'rxjs';
 })
 export class AuthService {
 
-  private apiUrl = 'https://localhost:7211/api/Auth';
-
+  // private apiUrl = 'https://localhost:7211/api/Auth';
+  private apiUrl = 'https://portfoliomanagementsys-3.onrender.com/api/Auth'
   constructor(private http: HttpClient) {}
 
   // Login API call

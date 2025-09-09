@@ -20,6 +20,7 @@ export class ContactdialogComponent {
     private contactService: ContactService
   ) {
     this.contactForm = this.fb.group({
+      id: [''],
       name: ['',[Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       message: ['', Validators.required]

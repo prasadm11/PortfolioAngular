@@ -16,17 +16,21 @@ export const routes: Routes = [
     component: HomepageComponent,
   },
   {
-    path:'about',
-    component:AboutComponent,
+    path: 'about',
+    component: AboutComponent,
   },
   {
-    path:'login',
-    component:LoginComponent
+    path: 'login',
+    component: LoginComponent,
   },
   {
-    path:'admindashboard',
-    component : AdmindashboardComponent,
-    canActivate: [AuthGuard]
-  }
-  
+    path: 'admindashboard',
+    component: AdmindashboardComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+  },
 ];

@@ -140,7 +140,7 @@ p {
 /* Image styling */
 
 .card img {
-  width: 100%;
+  width: 40%;
   max-height: 200px;
   object-fit: cover;
   border-radius: 8px;
@@ -589,13 +589,13 @@ p {
     max-width: 100% !important;
   }
 
-  
+
   .card img {
     max-width: 100% !important;
     height: auto !important;
   }
   .tech-stack .logos-track img {
-    height: 40px !important; 
+    height: 40px !important;
     width: auto !important;
   }
   .avatar img {
@@ -612,7 +612,7 @@ p {
     width: 45px !important;
     height: 45px !important;
     margin-left: 0 !important; /* Reset margin if causing overlap */
-  } 
+  }
 }
 
 

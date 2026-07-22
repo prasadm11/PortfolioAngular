@@ -29,6 +29,13 @@ export class WorkComponent {
     points: ['Conversion improved by 27%', 'Faster page loads', 'High user retention'],
     image: '/assets/img/projects/ccjmac.webp',
     link: 'https://github.com/foram6615/CommunityCourt-FrontEnd.git'
+  },
+  {
+    meta: 'Personal Project · 2026',
+    title: 'MelodySaavan - Music App',
+    points: [  'Fast music search','Playlists & streaming','MediaSession support'],
+    image: '/assets/img/projects/MelodySaavan.webp',
+    link: 'https://github.com/prasadm11/MelodySaavan.git'
   }
 ];
 

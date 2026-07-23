@@ -16,7 +16,7 @@ export class PortfolioComponent implements OnInit {
     this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
-  
+
 
   async ngOnInit(): Promise<void> {
     if (this.isBrowser) {
@@ -84,10 +84,11 @@ export class PortfolioComponent implements OnInit {
   }
 
   logos: string[] = [
-    'https://www.svgrepo.com/show/354987/figma.svg',
-    'https://www.svgrepo.com/show/331642/webflow.svg',
-    // 'https://www.svgrepo.com/show/306484/notion.svg',
-    'https://logo.clearbit.com/miro.com?size=500'
+    '/assets/img/techstacks/figma-svgrepo-com.svg',
+    '/assets/img/techstacks/webflow-svgrepo-com.svg',
+    '/assets/img/techstacks/notion-svgrepo-com.svg',
+    // 'https://logo.clearbit.com/miro.com?size=500'
+    '/assets/img/techstacks/adobe-svgrepo-com.svg'
   ];
 
   tags = [
